@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .exampleClass {
+    @apply pt-10 hover:text-purple-500
+  }
+}

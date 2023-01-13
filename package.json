@@ -4,7 +4,7 @@
   "description": "Team Biscay Bay's Blue Ocean Project!",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode=development",
+    "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
     "dev": "webpack serve --open",
     "server": "nodemon server/index.js"

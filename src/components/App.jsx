@@ -13,10 +13,14 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className=''>
       <h1 className="text-primary text-4xl font-bold">Hello World</h1>
-      <div>{sample}</div>
-      <button onClick={exclamationAdder}>Add exclamation</button>
+      <div className=''>{sample}</div>
+      <button
+        className=''
+        onClick={exclamationAdder}>
+          Add exclamation
+      </button>
     </div>
   )
 }
