@@ -7,7 +7,8 @@
     "start": "webpack --mode=development --watch",
     "build": "webpack --mode=production",
     "dev": "webpack serve --open",
-    "server": "nodemon server/index.js"
+    "server": "nodemon server/index.js",
+    "test": "node testPlaceholder.js"
   },
   "repository": {
     "type": "git",
