@@ -1,0 +1,36 @@
+{
+  "name": "thecampsite",
+  "version": "1.0.0",
+  "description": "Team Biscay Bay's Blue Ocean Project!",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --mode=development",
+    "build": "webpack --mode=production",
+    "dev": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Willy-McNamara/TheCampSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Willy-McNamara/TheCampSite/issues"
+  },
+  "homepage": "https://github.com/Willy-McNamara/TheCampSite#readme",
+  "dependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "npm": "^9.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
