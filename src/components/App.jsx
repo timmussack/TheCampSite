@@ -1,4 +1,5 @@
 import React from "react";
+import '../app.css';
 import {useSelector, useDispatch} from "react-redux";
 import {changeSample} from '../store/sampleReducer.js'
 
@@ -13,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Hello World</h1>
+      <h1 className="text-primary text-4xl font-bold">Hello World</h1>
       <div>{sample}</div>
       <button onClick={exclamationAdder}>Add exclamation</button>
     </div>
