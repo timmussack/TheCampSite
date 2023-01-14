@@ -1,7 +1,7 @@
 # TheCampSite
 Team Biscay Bay's Blue Ocean Project! 
 
-##Team Git Workflow 
+## Team Git Workflow 
 
 - FORK the group repo to your personal account. This will be your own dev branch! Clone this forked repo onto your local machine to use when coding. 
 - Submit work by pushing up to your personal fork (git push will work!), then submit a pull request to have it commited to the main, team repo.
