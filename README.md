@@ -35,6 +35,11 @@ git checkout main                   # switch to main branch
 git pull upstream main              # pull latest changes from upstream before committing.
 git merge <branch-name>             # merge new branch to main, make sure to resolve any merge conflicts before pushing.
 git push                            # push to your fork
+```
 
 # Go to your fork on Github and initiate a pull request.
-```
+
+__PR Rules:__
+
+- changes are only to be committed by PRs, no direct push allowed.
+- each PR needs a confirmation from at least one other member.
