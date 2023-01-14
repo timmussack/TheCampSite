@@ -5,9 +5,7 @@ require('dotenv').config({ path: require('find-config')('.env') })
 const npsBaseUrl = process.env.NPS_BASE_URL
 const npsAPIKEY = process.env.NPS_API_KEY
 
-console.log('NPS base url', process.env.NPS_BASE_URL)
-
-const getOne = (req, res) => {
+const getOne = async () => {
   const config = {
       method: 'get',
       url: `${npsBaseUrl}/campgrounds?Limit=1`,
@@ -15,11 +13,19 @@ const getOne = (req, res) => {
         'x-api-key': npsAPIKEY
       }
     };
-    console.log('base variable', config.url)
+    // console.log('base variable', config.url)
+try {
+const response = await axios(config)
+return response.data
+// res.send(response.data)
+// console.log('data from model', data)
+// res.send(response.data)
+} catch(error) {
+return error
+// console.log(error)
+// res.sendStatus(401)
+}
 
-    axios(config)
-    .then((data)=>console.log(data.data))
-    .catch((error)=>console.log(error, 'error'))
 
 }
 
