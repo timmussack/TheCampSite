@@ -3,13 +3,18 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 
+const npsAPI = require('./Routes/nps_api.js')
+
 /* ======== ======== ======== MIDDLEWARE ======== ======== ======== */
 let app = express()
 app.use(cors())
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
-/* ======== ======== ======== ROUTES ======== ======== ======== */
+
+/* ======== ======== ======== Routers ======== ======== ======== */
+app.use('/npsApi', npsAPI)
+
 app.get('/', (req,res) => {
   res.send(`yer up 'n runnin'`)
 })
