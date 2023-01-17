@@ -2,9 +2,17 @@ module.exports = {
   content: ['./src/**/*.{js,jsx}', './public/index.html'],
   theme: {
       extend: {
-          colors: {
-              primary: '#1B73E8',
+          screens: {
+            'desktop': '768px',
           },
+          colors: {
+              primary: '#212121',
+              secondary: '#616161',
+              pop: '#6D9886'
+          },
+          fontFamily: {
+            primary: ['Jost', 'sans-serif'],
+          }
       },
   },
   plugins: [],
