@@ -7,7 +7,7 @@ import { GiCampingTent } from "react-icons/gi";
 const TitleLogo = () => {
 
   return (
-    <div className="flex flex-row justify-around items-center">
+    <div className="flex flex-row items-center">
       <GiCampingTent size={50}/>
       <h1 className="text-primary text-4xl font-bold">The <span className="text-pop">Camp</span>Site</h1>
     </div>

@@ -2,11 +2,14 @@ import React from "react";
 import "../app.css";
 import {useSelector, useDispatch} from "react-redux";
 import {changeSample} from "../store/sampleReducer.js";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ campsite }) => {
 
+  const navigate = useNavigate();
+
   return (
-      <div className="flex flex-col bg-white rounded-xl shadow-lg w-72 m-6 p-2 transform transition duration-500 hover:scale-105">
+      <div className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg w-72 m-6 p-2 transform transition duration-500 hover:scale-105" onClick={() => navigate(`/campsite/${campsite.id}`)}>
 
         <img className="rounded-xl m-0" src={campsite.multimedia.photos[0]}/>
 
