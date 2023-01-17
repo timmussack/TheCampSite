@@ -4,10 +4,11 @@ const router = express.Router();
 const { getAll } = require('../models/nps_api.js');
 
 // get a single site from the nps API
-router.get('/getOneSite', async (req, res) => {
+router.get('/getAllCampSites', async (req, res) => {
   try {
     const data = await getAll(req, res);
     // sends an array of campsite objects back to the client
+    // got to http://localhost:3007/npsAPI/getOneSite to view the data
 
     res.send(data.data);
   } catch (error) {
