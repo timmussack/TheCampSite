@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+//Sample data for card view setup
+const {sampleCampsites} = require("../store/sampleData.js");
+
 // the changeProduct reducer changes the state to a new productId
 const sampleSlice = createSlice({
-  name: 'sample',
+  name: 'campsites',
   initialState: {
     testKey: 'testVal'
   },
