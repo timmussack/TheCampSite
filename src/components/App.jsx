@@ -8,8 +8,6 @@ import Home from './Home.jsx';
 import Login from './Login.jsx';
 
 function App() {
-  const campsites = useSelector((state) => state.campsites.data);
-
   // Example using redux
   const sample = useSelector((state) => state.sample.testKey);
   const dispatch = useDispatch();
@@ -21,8 +19,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" index element={<Home campsites={campsites} />} />
-      <Route path="/campsite/:id" element={<CampsiteDetails campsites={campsites} />} />
+      <Route path="/" index element={<Home />} />
+      <Route path="/campsite/:id" element={<CampsiteDetails />} />
       <Route path="/login" element={<Login />} />
     </Routes>
   );
