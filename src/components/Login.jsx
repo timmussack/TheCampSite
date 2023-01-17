@@ -1,23 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "../app.css";
-import {useSelector, useDispatch} from "react-redux";
-import {changeSample} from "../store/sampleReducer.js";
-import TitleLogo from "./TitleLogo.jsx";
-import LoginForm from "./LoginForm.jsx";
-import SignUpForm from "./SignUpForm.jsx";
+import React from 'react';
+import '../app.css';
+import TitleLogo from './TitleLogo.jsx';
+import LoginForm from './LoginForm.jsx';
+import SignUpForm from './SignupForm.jsx';
 
-const Login = () => {
-
+function Login() {
   return (
     <div className="flex flex-col font-primary w-full min-h-screen p-2">
 
       <div className="border-y-2 border-pop py-3 flex flex-wrap flex-row justify-around items-center">
-        <NavLink
-          to="/"
-          >
-          <TitleLogo />
-        </NavLink>
+        <TitleLogo />
       </div>
 
       <div className="flex flex-col mt-5 justify-center items-center space-x-5 desktop:flex-row desktop:h-[calc(100vh-110px)]">
@@ -26,9 +18,8 @@ const Login = () => {
         <SignUpForm />
       </div>
 
-
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

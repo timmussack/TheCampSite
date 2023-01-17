@@ -1,18 +1,15 @@
-import React from "react";
-import "../app.css";
-import {useSelector, useDispatch} from "react-redux";
-import {changeSample} from "../store/sampleReducer.js";
-import CardList from "./CardList.jsx";
-import Header from "./Header.jsx";
+import React from 'react';
+import '../app.css';
+import CardList from './CardList.jsx';
+import Header from './Header.jsx';
 
-const Home = ( { sampleCampsites } ) => {
-
+function Home() {
   return (
     <div className="font-primary w-full min-h-screen p-2">
-      <Header/>
-      <CardList sampleCampsites={sampleCampsites}/>
+      <Header />
+      <CardList />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

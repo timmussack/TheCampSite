@@ -1,17 +1,24 @@
-import React from "react";
-import "../app.css";
-import {useSelector, useDispatch} from "react-redux";
-import {changeSample} from "../store/sampleReducer.js";
-import { GiCampingTent } from "react-icons/gi";
+import React from 'react';
+import '../app.css';
+import { GiCampingTent } from 'react-icons/gi';
+import { NavLink } from 'react-router-dom';
 
-const TitleLogo = () => {
-
+function TitleLogo() {
   return (
-    <div className="flex flex-row items-center">
-      <GiCampingTent size={50}/>
-      <h1 className="text-primary text-4xl font-bold">The <span className="text-pop">Camp</span>Site</h1>
-    </div>
-  )
+    <NavLink
+      to="/"
+    >
+      <div className="flex flex-row items-center cursor-pointer">
+        <GiCampingTent size={50} />
+        <h1 className="text-primary text-4xl font-bold">
+          The
+          <span className="text-pop">Camp</span>
+          Site
+        </h1>
+      </div>
+    </NavLink>
+
+  );
 }
 
-export default TitleLogo
+export default TitleLogo;

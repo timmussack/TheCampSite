@@ -31,7 +31,9 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/react-in-jsx-scope": 0,
         "react/jsx-uses-react": 0,
-        "no-unused-vars": 0
+        "import/extensions": 0,
+        "no-unused-vars": 0,
+        "no-console": 0
     },
     "settings": {
         "react": {
