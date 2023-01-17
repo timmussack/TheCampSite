@@ -10,6 +10,7 @@ const CardList = ({ sampleCampsites }) => {
     <div className="flex justify-center flex-wrap">
     {sampleCampsites.map(campsite =>
       <Card
+        key={campsite.id}
         campsite={campsite}
       />
     )}

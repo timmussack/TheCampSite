@@ -1,5 +1,6 @@
 const sampleCampsites = [
   {
+  id: "1",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -32,6 +33,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "2",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -64,6 +66,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "3",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -96,6 +99,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "4",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -128,6 +132,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "5",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -160,6 +165,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "6",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -192,6 +198,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "7",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -224,6 +231,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "8",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -256,6 +264,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "9",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -288,6 +297,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "10",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -320,6 +330,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "11",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -352,6 +363,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "12",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -384,6 +396,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "13",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -416,6 +429,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "14",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -448,6 +462,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "15",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -480,6 +495,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "16",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -512,6 +528,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "17",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -544,6 +561,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "18",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -576,6 +594,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "19",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
@@ -608,6 +627,7 @@ const sampleCampsites = [
   }
 },
 {
+  id: "20",
   campsiteName: "Wonder Lake",
   campsitePhone: "808-308-4275",
   campsiteEmail: "wonderlake@email.com",
