@@ -20,7 +20,7 @@ const Login = () => {
         </NavLink>
       </div>
 
-      <div className="h-[calc(100vh-110px)] overflow-auto flex flex-col mt-5 justify-center items-center space-x-5 desktop:flex-row">
+      <div className="flex flex-col mt-5 justify-center items-center space-x-5 desktop:flex-row desktop:h-[calc(100vh-110px)]">
         <LoginForm />
         <p className="text-2xl my-5">or</p>
         <SignUpForm />
