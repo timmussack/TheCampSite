@@ -7,7 +7,7 @@ const SearchBar = () => {
 
   return (
       <>
-        <input className="border-primary border-2 rounded-2xl pl-3 h-9 w-64 mb-2" placeholder="Search by location..."/>
+        <input className="border-primary border rounded-2xl pl-3 h-9 w-56 mt-2 desktop:mt-0" placeholder="Search by location..."/>
       </>
   )
 }

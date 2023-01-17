@@ -4,12 +4,13 @@ import {useSelector, useDispatch} from "react-redux";
 import {changeSample} from "../store/sampleReducer.js";
 import { FaUserAlt } from "react-icons/fa";
 
+
 const LogInJoin = () => {
 
   return (
-      <>
-        <button className="flex-end h-9 w-30"> <FaUserAlt className="mr-2.5 mt-1" size={28}/> </button>
-      </>
+    <>
+      <FaUserAlt className="cursor-pointer transform transition duration-500 hover:scale-110" size={28} onClick={() => console.log("Login Clicked!")}/>
+    </>
   )
 }
 

@@ -8,20 +8,16 @@ import SelectDistance from "./SelectDistance.jsx";
 import SelectSortBy from "./SelectSortBy.jsx";
 import LogInJoin from "./LogInJoin.jsx";
 
+
 const Header = () => {
 
   return (
-    <div className="border-y-2 border-pop py-2">
-      <div className="flex flex-row justify-around  content-center">
-        <TitleLogo />
-        <LogInJoin />
-      </div>
-
-      <div className="flex flex-col p-4 justify-center">
-        <SearchBar />
-        <SelectDistance />
-        <SelectSortBy />
-      </div>
+    <div className="border-y-2 border-pop py-3 flex flex-wrap flex-row justify-around items-center">
+      <TitleLogo />
+      <LogInJoin />
+      <SearchBar />
+      <SelectDistance />
+      <SelectSortBy />
     </div>
   )
 }

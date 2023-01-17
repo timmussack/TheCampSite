@@ -6,12 +6,14 @@ import {changeSample} from "../store/sampleReducer.js";
 const SelectSortBy = () => {
 
   return (
-      <>
-        <select className="border-primary border-2 rounded-2xl pl-3 h-9 w-40">
-          <option value="number" selected>Most Reviews</option>
-          <option value="highestAverage">Highest Average</option>
+      <label>
+        Filter:
+        <select className="border-primary border rounded-2xl pl-3 h-9 w-36 mt-2 desktop:mt-0" defaultValue="none">
+          <option value="none" selected>None</option>
+          <option value="mostReviews" selected>Most Reviews</option>
+          <option value="highestRated">Highest Rated</option>
         </select>
-      </>
+      </label>
   )
 }
 
