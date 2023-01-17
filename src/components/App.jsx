@@ -13,12 +13,12 @@ const {sampleCampsites} = require("../store/sampleData.js");
 const App = () => {
 
   const sample = useSelector((state) => state.sample.testKey);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const exclamationAdder = (e) => {
+  const exclamationAdder = () => {
     // add '!' to state
-    dispatch(changeSample(sample + '!'))
-  }
+    dispatch(changeSample(`${sample}!`));
+  };
 
   return (
     <>
@@ -32,5 +32,3 @@ const App = () => {
 }
 
 export default App
-
-
