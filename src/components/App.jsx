@@ -1,28 +1,30 @@
-import React from "react";
+import React from 'react';
 import '../app.css';
-import {useSelector, useDispatch} from "react-redux";
-import {changeSample} from '../store/sampleReducer.js'
+import { useSelector, useDispatch } from 'react-redux';
+import { changeSample } from '../store/sampleReducer';
 
-const App = () => {
+function App() {
   const sample = useSelector((state) => state.sample.testKey);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const exclamationAdder = (e) => {
+  const exclamationAdder = () => {
     // add '!' to state
-    dispatch(changeSample(sample + '!'))
-  }
+    dispatch(changeSample(`${sample}!`));
+  };
 
   return (
-    <div className=''>
+    <div className="">
       <h1 className="text-primary text-4xl font-bold">Hello World</h1>
-      <div className=''>{sample}</div>
+      <div className="">{sample}</div>
       <button
-        className=''
-        onClick={exclamationAdder}>
-          Add exclamation!!!
+        type="button"
+        className=""
+        onClick={exclamationAdder}
+      >
+        Add exclamation!!!
       </button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
