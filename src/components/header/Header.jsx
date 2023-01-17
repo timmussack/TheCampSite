@@ -1,5 +1,4 @@
 import React from 'react';
-import '../app.css';
 import SearchBar from './SearchBar.jsx';
 import TitleLogo from './TitleLogo.jsx';
 import DistanceSelect from './DistanceSelect.jsx';

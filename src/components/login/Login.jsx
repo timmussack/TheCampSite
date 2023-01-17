@@ -1,6 +1,5 @@
 import React from 'react';
-import '../app.css';
-import TitleLogo from './TitleLogo.jsx';
+import TitleLogo from '../header/TitleLogo.jsx';
 import LoginForm from './LoginForm.jsx';
 import SignUpForm from './SignupForm.jsx';
 

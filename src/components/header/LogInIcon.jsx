@@ -1,5 +1,4 @@
 import React from 'react';
-import '../app.css';
 import { FaUserAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 

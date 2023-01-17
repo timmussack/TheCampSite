@@ -1,5 +1,4 @@
 import React from 'react';
-import '../app.css';
 import { useNavigate } from 'react-router-dom';
 
 function Card({ campsite }) {

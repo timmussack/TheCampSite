@@ -1,5 +1,4 @@
 import React from 'react';
-import '../app.css';
 import { GiCampingTent } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 

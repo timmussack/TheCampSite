@@ -1,8 +1,7 @@
 import React from 'react';
-import '../app.css';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import Header from './Header.jsx';
+import Header from '../header/Header.jsx';
 
 function CampsiteDetails() {
   // get data from redux store
