@@ -5,7 +5,6 @@ const morgan = require('morgan');
 const cors = require('cors');
 const db = require('./db.js');
 const MongoModels = require('./Models/mongoModels.js');
-
 const npsAPI = require('./Routes/nps_api.js');
 
 /* ======== ======== ======== MIDDLEWARE ======== ======== ======== */
@@ -19,10 +18,6 @@ app.use('/npsApi', npsAPI);
 
 app.get('/', (req, res) => {
   res.send('yer up \'n runnin\'');
-});
-
-app.get('/googleaccess', (req, res) => {
-  res.sendStatus(201);
 });
 
 app.get('/getAllCampsites', (req, res) => {
