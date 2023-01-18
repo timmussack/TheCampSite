@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // Sample data for card view setup
-const { sampleCampsites } = require('./sampleData.js');
+const { allCamps } = require('./allCamps.js');
 
 const campsitesSlice = createSlice({
   name: 'campsites',
   initialState: {
-    data: sampleCampsites,
+    data: allCamps.data,
   },
   reducers: {
 
