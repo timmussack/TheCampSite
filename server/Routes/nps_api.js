@@ -1,7 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
-const { getAll } = require('../models/nps_api.js');
+const { getAll } = require('../Models/nps_api.js');
 
 // get a single site from the nps API
 router.get('/getAllCampSites', async (req, res) => {
