@@ -59,6 +59,7 @@ NPSModels.getAll().then((res) => {
     }
     /* ======= Create and save new document to mongo collection ======= */
     new MongoModels.Campsite({
+      id: i + 1,
       page: page,
       campsiteName: curr.name,
       campsitePhone: phoneNumber,
