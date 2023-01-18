@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const db = require('./db.js');
+const MongoModels = require('./Models/mongoModels.js');
 
 const npsAPI = require('./Routes/nps_api.js');
 
@@ -25,6 +26,17 @@ app.get('/', (req, res) => {
 // a script tag to your application's JavaScript file(s).
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../public'));
+});
+
+app.get('/getAllCampsites', (req, res) => {
+  MongoModels.Campsite.find()
+    .then((dbRes) => {
+      res.send(dbRes);
+    })
+    .catch((err) => {
+      console.log('error in getAllCampsites', err);
+      res.send(err);
+    });
 });
 
 /* ======== ======== ======== SET TO LISTEN ======== ======== ======== */
