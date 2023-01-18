@@ -8,15 +8,18 @@ import axios from 'axios';
 function LogInIcon() {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
-  console.log(user);
+  // console.log(user);
 
-  const login = useGoogleLogin({
-    onSuccess: async (response) => {
-      axios.get('http://localhost:4007/googleaccess', {
-        access_token: response.access_token,
-      });
-    },
-  });
+  // const login = useGoogleLogin({
+  //   onSuccess: async (response) => {
+  //     axios.get('http://localhost:4007/googleaccess', {
+  //       access_token: response.access_token,
+  //     });
+  //   },
+  // });
+  const login = () => {
+
+  };
 
   return (
     <div>

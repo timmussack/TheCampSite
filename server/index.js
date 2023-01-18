@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
   res.send('yer up \'n runnin\'');
 });
 
+app.get('/googleaccess', (req, res) => {
+  res.sendStatus(201);
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
