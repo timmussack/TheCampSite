@@ -8,7 +8,7 @@ function Home() {
   return (
     <div className="font-primary w-full min-h-screen p-2">
       <Header />
-      {campsites && <CardList />}
+      {campsites.length > 0 && <CardList />}
     </div>
   );
 }
