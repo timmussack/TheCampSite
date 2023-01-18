@@ -13,7 +13,7 @@ NPSModels.getAll().then((res) => {
   let page = 0;
   // loop over the arr of Objs, assigning the appropriate information to our Campsite model as we go
   for (let i = 0; i < arrOfCampsites.length; i += 1) {
-    let curr = arrOfCampsites[i];
+    const curr = arrOfCampsites[i];
     if (i % 100 === 0) {
       console.log('100 logged');
     }
@@ -35,31 +35,31 @@ NPSModels.getAll().then((res) => {
     }
     let postalCode;
     if (curr.addresses.length > 0) {
-      postalCode = curr.addresses[0].postalCode
+      postalCode = curr.addresses[0].postalCode;
     } else {
-      postalCode = 'none listed'
+      postalCode = 'none listed';
     }
     let city;
     if (curr.addresses.length > 0) {
-      city = curr.addresses[0].city
+      city = curr.addresses[0].city;
     } else {
-      city = 'none listed'
+      city = 'none listed';
     }
     let state;
     if (curr.addresses.length > 0) {
-      state = curr.addresses[0].state
+      state = curr.addresses[0].state;
     } else {
-      state = 'none listed'
+      state = 'none listed';
     }
     let line1;
     if (curr.addresses.length > 0) {
-      line1 = curr.addresses[0].line1
+      line1 = curr.addresses[0].line1;
     } else {
-      line1 = 'none listed'
+      line1 = 'none listed';
     }
     /* ======= Create and save new document to mongo collection ======= */
     new MongoModels.Campsite({
-      page: page,
+      page,
       campsiteName: curr.name,
       campsitePhone: phoneNumber,
       campsiteEmail: emailAddress,
@@ -75,10 +75,10 @@ NPSModels.getAll().then((res) => {
       wheelChairAccess: curr.accessibility.wheelchairaccess,
       weatherOverview: curr.weatheroverview,
       address: new MongoModels.Address({
-        postalCode: postalCode,
-        city: city,
-        state: state,
-        line1: line1,
+        postalCode,
+        city,
+        state,
+        line1,
       }),
       directions: curr.directionsoverview,
       latLong: new MongoModels.LatLng({
