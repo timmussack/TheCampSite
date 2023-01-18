@@ -1,9 +1,10 @@
+const axios = require('axios');
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const db = require('./db.js');
-
+const MongoModels = require('./Models/mongoModels.js');
 const npsAPI = require('./Routes/nps_api.js');
 
 /* ======== ======== ======== MIDDLEWARE ======== ======== ======== */
@@ -19,6 +20,17 @@ app.get('/', (req, res) => {
   res.send('yer up \'n runnin\'');
 });
 
+app.get('/getAllCampsites', (req, res) => {
+  MongoModels.Campsite.find()
+    .then((dbRes) => {
+      res.send(dbRes);
+    })
+    .catch((err) => {
+      console.log('error in getAllCampsites', err);
+      res.send(err);
+    });
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
@@ -29,7 +41,7 @@ app.get('*', (req, res) => {
 
 /* ======== ======== ======== SET TO LISTEN ======== ======== ======== */
 
-const PORT = process.env.PORT || 3007;
+const PORT = process.env.PORT || 4007;
 app.listen(PORT, () => {
   console.log(`Web server running on: http://localhost:${PORT}`);
 });
