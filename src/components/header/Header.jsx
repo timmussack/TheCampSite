@@ -9,10 +9,10 @@ function Header() {
   return (
     <div className="border-y-2 border-pop py-3 flex flex-wrap flex-row justify-around items-center">
       <TitleLogo />
-      <LogInIcon />
       <SearchBar />
       <DistanceSelect />
       <FilterBySelect />
+      <LogInIcon />
     </div>
   );
 }
