@@ -25,14 +25,6 @@ app.get('/googleaccess', (req, res) => {
   res.sendStatus(201);
 });
 
-/* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
-
-// handle every other route with index.html, which will contain
-// a script tag to your application's JavaScript file(s).
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../public'));
-});
-
 app.get('/getAllCampsites', (req, res) => {
   MongoModels.Campsite.find()
     .then((dbRes) => {
@@ -42,6 +34,14 @@ app.get('/getAllCampsites', (req, res) => {
       console.log('error in getAllCampsites', err);
       res.send(err);
     });
+});
+
+/* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
+
+// handle every other route with index.html, which will contain
+// a script tag to your application's JavaScript file(s).
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../public'));
 });
 
 /* ======== ======== ======== SET TO LISTEN ======== ======== ======== */

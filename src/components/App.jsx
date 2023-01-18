@@ -26,6 +26,8 @@ function App() {
     axios.get('http://localhost:4007/getAllCampsites')
       .then((response) => {
         console.log(response);
+        dispatch(changeData(response.data));
+        console.log(campsitesData);
       });
   }, []);
 
