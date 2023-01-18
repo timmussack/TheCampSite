@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import sampleReducer from './sampleReducer.js';
 import campsitesReducer from './campsitesReducer.js';
+import userReducer from './userReducer';
 
 const store = configureStore({
   reducer:
   {
     sample: sampleReducer,
     campsites: campsitesReducer,
+    currentUser: userReducer,
   },
 });
 
