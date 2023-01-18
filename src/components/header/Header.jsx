@@ -19,6 +19,9 @@ function Header() {
       <FilterBySelect />
 
       <LogInIcon />
+
+      {/* secondary filter bar shows on mobile only */}
+      <FilterBar />
     </div>
   );
 }

@@ -12,7 +12,7 @@ function LogInIcon() {
 
         {/* text split so on mobile only "log in" shows */}
         <p className="ml-1">Log in</p>
-        <p className="ml-1 hidden md:flex"> or Sign up</p>
+        <p className="ml-1 hidden lg:flex"> or Sign up</p>
       </div>
     </button>
 

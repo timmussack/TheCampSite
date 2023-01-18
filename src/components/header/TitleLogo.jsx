@@ -9,7 +9,7 @@ function TitleLogo() {
     >
       <div className="flex flex-row items-center cursor-pointer">
         <GiCampingTent size={50} />
-        <h1 className="text-primary text-4xl font-bold hidden md:flex">
+        <h1 className="text-primary text-4xl font-bold hidden lg:flex">
           The
           <span className="text-pop">Camp</span>
           Site

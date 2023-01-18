@@ -2,7 +2,7 @@ import React from 'react';
 
 function DistanceSelect() {
   return (
-    <label htmlFor="distance" className="mr-2">
+    <label htmlFor="distance" className="mr-2 hidden md:flex">
       Distance:
       <select id="distance" className="border-primary border rounded-2xl pl-3 h-9 w-20 mt-2 desktop:mt-0" defaultValue="any">
         <option value="any">Any</option>
