@@ -51,6 +51,8 @@ const Card = React.forwardRef((props, ref) => {
 
   //   </div>
   // );
+
+  // this is temporary while waiting for full data to be acessible
   return (
     <div
       role="button"
@@ -72,21 +74,6 @@ const Card = React.forwardRef((props, ref) => {
       </div>
 
       <p className="text-secondary">Distance: 500 miles</p>
-
-      {/* <p className="text-secondary mt-9">
-        Staff on site:
-        {campsite.amenities.stafforVolunteerHostOnSite === true ? 'Yes' : 'No'}
-      </p>
-
-      <p className="text-secondary">
-        Phone:
-        {campsite.cellPhoneReception}
-      </p>
-
-      <p className="text-secondary">
-        Number of sites:
-        {campsite.campsites.totalSites || 0}
-      </p> */}
 
     </div>
   );

@@ -17,7 +17,6 @@ function CardList() {
 
   // need full list to test inifinte scroll
   const getData = (start) => {
-    console.log(allCamps.data.length);
     const slice = allCamps.data.slice(start, start + 20);
     setCampgrounds([...campgrounds, ...slice]);
     setHasMore(slice.length > 0);
@@ -25,10 +24,8 @@ function CardList() {
   };
 
   // runs when user reaches end of page
-  // once data is fully figured out will also have it change
-  // when search, distance, or sort changes
+  // once data is fully figured out will also have it change when search, distance, or sort changes
   useEffect(() => {
-    console.log(startNumber);
     setLoading(true);
     getData(startNumber);
   }, [startNumber]);
@@ -36,6 +33,7 @@ function CardList() {
   // part of inifinite scroll
   const observer = useRef();
 
+  // part of infinite scroll
   const lastImageElementRef = useCallback((node) => {
     if (loading) return;
     if (observer.current) observer.current.disconnect();
@@ -47,17 +45,6 @@ function CardList() {
     });
     if (node) observer.current.observe(node);
   }, [loading, hasMore]);
-
-  // return (
-  //   <div className="flex justify-center flex-wrap">
-  //     {campsites.map((campsite) => (
-  //       <Card
-  //         key={campsite.id}
-  //         campsite={campsite}
-  //       />
-  //     ))}
-  //   </div>
-  // );
 
   return (
     <div className="flex justify-center flex-wrap">
