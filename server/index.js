@@ -1,3 +1,4 @@
+const axios = require('axios');
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
@@ -20,12 +21,8 @@ app.get('/', (req, res) => {
   res.send('yer up \'n runnin\'');
 });
 
-/* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
-
-// handle every other route with index.html, which will contain
-// a script tag to your application's JavaScript file(s).
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../public'));
+app.get('/googleaccess', (req, res) => {
+  res.sendStatus(201);
 });
 
 app.get('/getAllCampsites', (req, res) => {
@@ -39,9 +36,17 @@ app.get('/getAllCampsites', (req, res) => {
     });
 });
 
+/* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
+
+// handle every other route with index.html, which will contain
+// a script tag to your application's JavaScript file(s).
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../public'));
+});
+
 /* ======== ======== ======== SET TO LISTEN ======== ======== ======== */
 
-const PORT = process.env.PORT || 3007;
+const PORT = process.env.PORT || 4007;
 app.listen(PORT, () => {
   console.log(`Web server running on: http://localhost:${PORT}`);
 });
