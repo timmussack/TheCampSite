@@ -1,15 +1,18 @@
 const axios = require('axios');
 const path = require('node:path');
-// require('dotenv').config({ path: require('find-config')('.env') });
-require('dotenv').config();
+const otherPath = require('find-config');
+require('dotenv').config({ path: otherPath('.env') });
+// require('dotenv').config();
 
 const npsBaseUrl = process.env.NPS_BASE_URL;
 const npsAPIKEY = process.env.NPS_API_KEY;
 
+console.log('here is npsAPIKEY and npsBaseUrl', npsAPIKEY, npsBaseUrl);
+
 const getAll = async () => {
   const config = {
     method: 'get',
-    url: `${npsBaseUrl}/campgrounds`,
+    url: `${npsBaseUrl}/campgrounds?limit=1000`,
     headers: {
       'x-api-key': npsAPIKEY,
     },
@@ -19,9 +22,9 @@ const getAll = async () => {
     const response = await axios(config);
     return response.data;
     // res.send(response.data)
-    // console.log('data from model', data)
     // res.send(response.data)
   } catch (error) {
+    console.log('error in API call', error);
     return error;
     // console.log(error)
     // res.sendStatus(401)
