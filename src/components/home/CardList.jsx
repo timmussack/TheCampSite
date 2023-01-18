@@ -17,6 +17,7 @@ function CardList() {
 
   // need full list to test inifinte scroll
   const getData = (start) => {
+    console.log(allCamps.data.length);
     const slice = allCamps.data.slice(start, start + 20);
     setCampgrounds([...campgrounds, ...slice]);
     setHasMore(slice.length > 0);
