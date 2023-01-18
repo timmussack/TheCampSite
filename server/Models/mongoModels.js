@@ -16,6 +16,8 @@ const addressSchema = new mongoose.Schema({
 
 const campsiteSchema = new mongoose.Schema({
   id: Number,
+  averageRating: Number,
+  numOfReviews: Number,
   page: Number,
   campsiteName: String,
   campsitePhone: String,
@@ -57,6 +59,7 @@ const userSchema = new mongoose.Schema({
 
 const reviewSchema = new mongoose.Schema({
   campsiteName: String,
+  campsiteID: Number,
   userName: String,
   description: String,
   rating: Number,
