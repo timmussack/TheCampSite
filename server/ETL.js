@@ -9,11 +9,16 @@ const photos = [['https://res.cloudinary.com/dfxzjeut8/image/upload/v1673991542/
 let arrOfCampsites;
 NPSModels.getAll().then((res) => {
   arrOfCampsites = res.data;
+  // track page
+  let page = 0;
   // loop over the arr of Objs, assigning the appropriate information to our Campsite model as we go
   for (let i = 0; i < arrOfCampsites.length; i += 1) {
     let curr = arrOfCampsites[i];
     if (i % 100 === 0) {
       console.log('100 logged');
+    }
+    if (i % 20 === 0) {
+      page += 1;
     }
     /* ======= Assign dummy data if real data doesn't exist ======= */
     let phoneNumber;
@@ -54,6 +59,7 @@ NPSModels.getAll().then((res) => {
     }
     /* ======= Create and save new document to mongo collection ======= */
     new MongoModels.Campsite({
+      page: page,
       campsiteName: curr.name,
       campsitePhone: phoneNumber,
       campsiteEmail: emailAddress,
