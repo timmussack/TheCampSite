@@ -60,7 +60,9 @@ NPSModels.getAll().then((res) => {
     /* ======= Create and save new document to mongo collection ======= */
     new MongoModels.Campsite({
       id: i + 1,
-      page,
+      averageRating: 0,
+      numOfReviews: 0,
+      page: page,
       campsiteName: curr.name,
       campsitePhone: phoneNumber,
       campsiteEmail: emailAddress,
@@ -88,6 +90,9 @@ NPSModels.getAll().then((res) => {
       }),
       multimedia: photos[i % 5],
     }).save();
+    if (i + 1 === arrOfCampsites.length) {
+      console.log('done adding campsites!')
+    }
   }
 })
   .catch((err) => {
