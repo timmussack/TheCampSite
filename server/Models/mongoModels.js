@@ -15,6 +15,7 @@ const addressSchema = new mongoose.Schema({
 });
 
 const campsiteSchema = new mongoose.Schema({
+  id: Number,
   page: Number,
   campsiteName: String,
   campsitePhone: String,
