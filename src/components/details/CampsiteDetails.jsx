@@ -18,7 +18,7 @@ function CampsiteDetails() {
         Campsite details page for campsite id:
         {id}
       </h1>
-      <p>{campsite.campsiteName}</p>
+      <p>{campsite.name}</p>
       <p>{campsite.description}</p>
     </div>
   );
