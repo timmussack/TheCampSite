@@ -47,6 +47,10 @@ app.post('/addReview', (req, res) => {
   res.end('Received review');
 });
 
+app.post('/getFiltered', (req, res) => {
+  console.log(req.body);
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
