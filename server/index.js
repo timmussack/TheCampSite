@@ -7,6 +7,7 @@ const cors = require('cors');
 const db = require('./db.js');
 const MongoModels = require('./Models/mongoModels.js');
 const npsAPI = require('./Routes/nps_api.js');
+const getByAnything = require('./controller.js');
 
 /* ======== ======== ======== MIDDLEWARE ======== ======== ======== */
 const app = express();
@@ -71,7 +72,7 @@ app.get('/addUser', (req, res) => {
 });
 
 app.post('/getFiltered', (req, res) => {
-  console.log(req.body);
+  getByAnything(req, res);
 });
 
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
