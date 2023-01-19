@@ -5,20 +5,6 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 function DistanceSelect({ setRadius }) {
-  // return (
-  //   <label htmlFor="distance" className="mr-2 hidden md:flex">
-  //     Distance:
-  // eslint-disable-next-line max-len
-  //     <select id="distance" className="border-primary border rounded-2xl pl-3 h-9 w-20 mt-2 desktop:mt-0" defaultValue="any">
-  //       <option value="any">Any</option>
-  //       <option value="50">50</option>
-  //       <option value="100">100</option>
-  //       <option selected value="250">250</option>
-  //       <option value="500">500</option>
-  //     </select>
-  //   </label>
-  // );
-
   const [selectedDistance, setSelectedDistance] = useState('N/A');
   const distances = ['N/A', '50', '100', '250', '500'];
 
@@ -28,14 +14,15 @@ function DistanceSelect({ setRadius }) {
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-      <InputLabel id="demo-select-small">Distance</InputLabel>
+    <FormControl sx={{ m: 1, minWidth: 120, borderRadius: '15px' }} size="small">
+      <InputLabel id="demo-select-small" sx={{ borderRadius: '15px' }}>Distance</InputLabel>
       <Select
         labelId="demo-select-small"
         id="demo-select-small"
         value={selectedDistance}
         label="Distance"
         onChange={(evt) => handleChange(evt)}
+        sx={{ borderRadius: '15px', background: 'white' }}
       >
         <MenuItem value="N/A">Any</MenuItem>
         <MenuItem value="50">50</MenuItem>

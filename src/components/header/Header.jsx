@@ -46,10 +46,11 @@ function Header() {
       <SearchBar setCoords={setCoords} setLocation={setLocation} />
 
       {/* on mobile disappears */}
-      {location && <DistanceSelect setRadius={setRadius} />}
+      {/* {location && <DistanceSelect setRadius={setRadius} />} */}
+      <DistanceSelect setRadius={setRadius} />
 
       {/* on mobile disappears */}
-      <FilterBySelect setFilter={setFilter} />
+      <FilterBySelect filter={filter} setFilter={setFilter} />
 
       <LogInIcon />
 
