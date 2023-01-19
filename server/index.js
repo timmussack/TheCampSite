@@ -70,6 +70,10 @@ app.get('/addUser', (req, res) => {
     .catch((err) => res.send(err));
 });
 
+app.post('/getFiltered', (req, res) => {
+  console.log(req.body);
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
