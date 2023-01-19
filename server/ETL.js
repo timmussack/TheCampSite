@@ -62,7 +62,7 @@ NPSModels.getAll().then((res) => {
       id: i + 1,
       averageRating: 0,
       numOfReviews: 0,
-      page: page,
+      page,
       campsiteName: curr.name,
       campsitePhone: phoneNumber,
       campsiteEmail: emailAddress,
@@ -91,7 +91,7 @@ NPSModels.getAll().then((res) => {
       multimedia: photos[i % 5],
     }).save();
     if (i + 1 === arrOfCampsites.length) {
-      console.log('done adding campsites!')
+      console.log('done adding campsites!');
     }
   }
 })
