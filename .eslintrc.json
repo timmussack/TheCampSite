@@ -35,7 +35,9 @@
         "no-unused-vars": 0,
         "no-console": 0,
         "camelcase": 0,
-        "import/no-extraneous-dependencies": 0
+        "no-param-reassign": 0,
+        "import/no-extraneous-dependencies": 0,
+        "global-require": 0
     },
     "settings": {
         "react": {

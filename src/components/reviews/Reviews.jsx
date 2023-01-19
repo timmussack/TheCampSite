@@ -1,6 +1,8 @@
 import React from 'react';
 
-function AddReview() {
+// This component will render a list of reviews in the CampsiteDetails.jsx page
+
+function Reviews() {
   return (
     <div className="font-primary w-full min-h-screen p-2">
       Profile page.
@@ -8,4 +10,4 @@ function AddReview() {
   );
 }
 
-export default AddReview;
+export default Reviews;
