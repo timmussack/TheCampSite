@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState, Fragment } from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 function DistanceSelect() {
   // return (
@@ -15,22 +19,30 @@ function DistanceSelect() {
   //   </label>
   // );
 
-  return (
-    <div className="hidden md:flex flex-col">
-      <p className="text-xs text-secondary">Distance</p>
-      <div className="border-1 border-primary border rounded-lg desktop:mt-0 p-1">
-        <label htmlFor="distance" className="mr-2 bg-neutral-50">
-          <select id="distance" className="bg-neutral-50" defaultValue="any">
-            <option value="any">Any</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-            <option selected value="250">250</option>
-            <option value="500">500</option>
-          </select>
-        </label>
-      </div>
-    </div>
+  const [selectedDistance, setSelectedDistance] = useState('Any');
+  const distances = ['Any', '50', '100', '250', '500'];
 
+  const handleChange = (evt) => {
+    setSelectedDistance(evt.target.value);
+  };
+
+  return (
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="demo-select-small">Distance</InputLabel>
+      <Select
+        labelId="demo-select-small"
+        id="demo-select-small"
+        value={selectedDistance}
+        label="Distance"
+        onChange={(evt) => handleChange(evt)}
+      >
+        <MenuItem value="Any">Any</MenuItem>
+        <MenuItem value="50">50</MenuItem>
+        <MenuItem value="100">100</MenuItem>
+        <MenuItem value="250">250</MenuItem>
+        <MenuItem value="500">500</MenuItem>
+      </Select>
+    </FormControl>
   );
 }
 
