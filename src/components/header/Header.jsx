@@ -5,6 +5,7 @@ import DistanceSelect from './DistanceSelect.jsx';
 import FilterBySelect from './FilterBySelect.jsx';
 import LogInIcon from './LogInIcon.jsx';
 import FilterBar from './FilterBar.jsx';
+import ProfileIcon from '../profile/ProfileIcon.jsx';
 
 function Header() {
   return (
@@ -22,6 +23,9 @@ function Header() {
 
       {/* secondary filter bar shows on mobile only */}
       <FilterBar />
+
+      {/* only shows up if a user is logged in */}
+      <ProfileIcon />
     </div>
   );
 }
