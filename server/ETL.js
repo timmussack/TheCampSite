@@ -74,7 +74,7 @@ NPSModels.getAll().then((res) => {
         firewoodAvailableForSale: curr.amenities.iceAvailableForSale,
         staffOrVulnteerHostOnSite: curr.amenities.staffOrVolunteerHostOnsite,
       },
-      totalSites: curr.campsites.totalsites,
+      totalSites: Number(curr.campsites.totalSites) ? Number(curr.campsites.totalSites) : null,
       wheelChairAccess: curr.accessibility.wheelchairaccess,
       weatherOverview: curr.weatheroverview,
       address: new MongoModels.Address({
@@ -84,10 +84,7 @@ NPSModels.getAll().then((res) => {
         line1,
       }),
       directions: curr.directionsoverview,
-      latLong: new MongoModels.LatLng({
-        lat: Number(curr.latitude),
-        lng: Number(curr.longitude),
-      }),
+      latLong: [Number(curr.longitude), Number(curr.latitude)],
       multimedia: photos[i % 5],
     }).save();
     if (i + 1 === arrOfCampsites.length) {

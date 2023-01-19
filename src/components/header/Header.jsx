@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeData } from '../../store/campsitesReducer';
 import SearchBar from './SearchBar.jsx';
 import TitleLogo from './TitleLogo.jsx';
 import DistanceSelect from './DistanceSelect.jsx';
@@ -14,6 +16,7 @@ function Header() {
   const [radius, setRadius] = useState('N/A');
   const [filter, setFilter] = useState('N/A');
   const [coords, setCoords] = useState('N/A');
+  const dispatch = useDispatch();
 
   function sendToServer() {
     let rating = 'N/A';
@@ -35,6 +38,7 @@ function Header() {
     })
       .then((res) => {
         console.log(res);
+        dispatch(changeData(res.data));
       })
       .catch((err) => {
         console.log(err);
