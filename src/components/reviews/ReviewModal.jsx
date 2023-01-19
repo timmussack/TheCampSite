@@ -4,7 +4,9 @@ import React, { useState, Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { Dialog, Transition } from '@headlessui/react';
-import { Rating, Box } from '@mui/material';
+import {
+  Rating, Box, Alert, Button, Modal, Typography,
+} from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 
 function ReviewModal({ campsite }) {
@@ -14,18 +16,33 @@ function ReviewModal({ campsite }) {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState(0);
   const [hover, setHover] = useState(-1);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   // get data from redux store
-  const name = useSelector((state) => state.currentUser.userData.name);
+  const user = useSelector((state) => state.currentUser.userData);
 
-  const toggleModal = (userName) => {
-    if (userName === '') {
-      alert('You must be signed in to leave a review.');
+  const toggleModal = () => {
+    if (!user.name) {
+      handleOpen();
       return;
     }
     setIsOpen(!isOpen);
   };
 
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 250,
+    bgcolor: 'background.paper',
+    border: '1px solid #212121',
+    borderRadius: '30px',
+    boxShadow: 24,
+    p: 4,
+  };
   const labels = {
     1: 'Terrible 🥲',
     2: 'Poor',
@@ -42,7 +59,7 @@ function ReviewModal({ campsite }) {
     axios.post('http://localhost:3007/addReview', {
       campsiteName: campsite.name,
       campsiteID: campsite.id,
-      userName: name,
+      userName: user.name,
       description: body,
       rating: value,
       photos: imageURL,
@@ -90,14 +107,31 @@ function ReviewModal({ campsite }) {
 
   return (
     <>
-      <div className="font-primary fixed flex items-center justify-center">
+      <div className="font-primary fixed flex flex-col items-center justify-center">
         <button
           type="button"
-          onClick={() => toggleModal(name)}
-          className="rounded-2xl border border-primary px-4 py-2 text-md font-medium text-primary drop-shadow-md hover:bg-pop transform transition duration-500 hover:scale-105 hover:drop-shadow-xl"
+          onClick={() => toggleModal()}
+          className="rounded-2xl border border-primary px-4 py-2 text-md mb-3 font-medium text-primary drop-shadow-md hover:bg-pop transform transition duration-500 hover:scale-105 hover:drop-shadow-xl"
         >
           Leave a review
         </button>
+
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            {/* <Typography id="modal-modal-title" variant="h6" component="h2">
+              Text in a modal
+            </Typography> */}
+            <Typography id="modal-modal-description" sx={{ fontFamily: 'Jost' }}>
+              Log in to leave a review.
+            </Typography>
+          </Box>
+        </Modal>
+
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -128,7 +162,7 @@ function ReviewModal({ campsite }) {
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-primary text-center font-bold"
+                    className="text-lg leading-6 text-primary text-center font-bold"
                   >
                     Tell us about {campsite.name}
                   </Dialog.Title>

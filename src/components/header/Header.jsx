@@ -5,6 +5,7 @@ import DistanceSelect from './DistanceSelect.jsx';
 import FilterBySelect from './FilterBySelect.jsx';
 import LogInIcon from './LogInIcon.jsx';
 import FilterBar from './FilterBar.jsx';
+import ProfileIcon from '../profile/ProfileIcon.jsx';
 
 const axios = require('axios');
 
@@ -62,6 +63,10 @@ function Header() {
       >
         Search
       </button>
+      <FilterBar />
+
+      {/* only shows up if a user is logged in */}
+      <ProfileIcon />
     </div>
   );
 }
