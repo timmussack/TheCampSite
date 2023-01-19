@@ -9,7 +9,8 @@
     "dev": "webpack serve --open",
     "server": "nodemon server/index.js",
     "test": "node testPlaceholder.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint --fix --ext .js,.jsx ."
   },
   "repository": {
     "type": "git",
