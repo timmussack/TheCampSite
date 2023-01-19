@@ -4,21 +4,20 @@ import React, {
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import Card from './Card.jsx';
-import { allCamps } from '../../store/allCamps.js';
 
 function CardList() {
   // get data from redux store
   const campsites = useSelector((state) => state.campsites.data);
 
-  const [campgrounds, setCampgrounds] = useState([]);
+  const [currentList, setCurrentList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [startNumber, setStartNumber] = useState(0);
 
   // need full list to test inifinte scroll
   const getData = (start) => {
-    const slice = allCamps.data.slice(start, start + 20);
-    setCampgrounds([...campgrounds, ...slice]);
+    const slice = campsites.slice(start, start + 20);
+    setCurrentList([...currentList, ...slice]);
     setHasMore(slice.length > 0);
     setLoading(false);
   };
@@ -27,7 +26,7 @@ function CardList() {
   // once data is fully figured out will also have it change when search, distance, or sort changes
   useEffect(() => {
     setLoading(true);
-    getData(startNumber);
+    return campsites && getData(startNumber);
   }, [startNumber]);
 
   // part of inifinite scroll
@@ -40,7 +39,6 @@ function CardList() {
     observer.current = new IntersectionObserver((camps) => {
       if (camps[0].isIntersecting && hasMore) {
         setStartNumber((prevStartNumber) => prevStartNumber + 20);
-        console.log('visible');
       }
     });
     if (node) observer.current.observe(node);
@@ -48,8 +46,8 @@ function CardList() {
 
   return (
     <div className="flex justify-center flex-wrap">
-      {campgrounds.map((campsite, index) => {
-        if (campgrounds.length === index + 1) {
+      {campsites.length > 0 && currentList.map((campsite, index) => {
+        if (currentList.length === index + 1) {
           return <Card key={campsite.id} campsite={campsite} ref={lastImageElementRef} />;
         }
         return <Card key={campsite.id} campsite={campsite} />;
