@@ -45,7 +45,9 @@ function CardList() {
   }, [loading, hasMore]);
 
   return (
-    <div className="flex justify-center flex-wrap">
+    // eslint-disable-next-line max-len
+    // <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-5">
+    <div className="flex flex-wrap justify-center">
       {campsites.length > 0 && currentList.map((campsite, index) => {
         if (currentList.length === index + 1) {
           return <Card key={campsite.id} campsite={campsite} ref={lastImageElementRef} />;
