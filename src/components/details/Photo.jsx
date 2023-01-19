@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 function Photo({ photo, index }) {
-  // const [ , ] = useState( );
-
-  // useEffect(() => {
-
-  // }, [])
-
   return (
-    <img src={`${photo}`} alt="" />
+    <img className="mr-auto ml-auto rounded-sm" src={`${photo}`} alt="" />
   );
 }
 
