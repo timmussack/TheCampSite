@@ -75,6 +75,12 @@ app.post('/getFiltered', (req, res) => {
   getByAnything(req, res);
 });
 
+app.get('/campsiteReviews', (req, res) => {
+  MongoModels.Review.find({ campsiteID: req.query.campsiteID })
+    .then((resultData) => res.send(resultData))
+    .catch((err) => res.send(err));
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
