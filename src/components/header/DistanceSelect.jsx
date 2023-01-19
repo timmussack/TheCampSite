@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-function DistanceSelect() {
+function DistanceSelect({ setRadius }) {
   // return (
   //   <label htmlFor="distance" className="mr-2 hidden md:flex">
   //     Distance:
@@ -19,11 +19,12 @@ function DistanceSelect() {
   //   </label>
   // );
 
-  const [selectedDistance, setSelectedDistance] = useState('Any');
-  const distances = ['Any', '50', '100', '250', '500'];
+  const [selectedDistance, setSelectedDistance] = useState('N/A');
+  const distances = ['N/A', '50', '100', '250', '500'];
 
   const handleChange = (evt) => {
     setSelectedDistance(evt.target.value);
+    setRadius(evt.target.value);
   };
 
   return (
@@ -36,7 +37,7 @@ function DistanceSelect() {
         label="Distance"
         onChange={(evt) => handleChange(evt)}
       >
-        <MenuItem value="Any">Any</MenuItem>
+        <MenuItem value="N/A">Any</MenuItem>
         <MenuItem value="50">50</MenuItem>
         <MenuItem value="100">100</MenuItem>
         <MenuItem value="250">250</MenuItem>
