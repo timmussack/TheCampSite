@@ -16,7 +16,7 @@ function DistanceSelect() {
   // );
 
   return (
-    <div className="hidden md:flex flex flex-col">
+    <div className="hidden md:flex flex-col">
       <p className="text-xs text-secondary">Distance</p>
       <div className="border-1 border-primary border rounded-lg desktop:mt-0 p-1">
         <label htmlFor="distance" className="mr-2 bg-neutral-50">
