@@ -15,13 +15,12 @@ const Card = React.forwardRef((props, ref) => {
     <div
       role="button"
       tabIndex={0}
-      className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg w-72 m-6 p-2 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+      className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg min-w-72 h-auto m-6 p-2 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
       onClick={() => navigate(`/campsite/${campsite.id}`, { state: { campsite } })}
       onKeyPress={() => handleKeyPress()}
       ref={ref} // for inifinite scroll
     >
-
-      <img className="rounded-xl m-0" src={campsite.multimedia[0]} alt="" />
+      <img className="p-0 m-0 rounded-xl object-cover" src={campsite.multimedia[0]} alt="" />
 
       <div className="flex flex-row justify-between mt-1">
 

@@ -6,7 +6,7 @@ import Header from '../header/Header.jsx';
 function Home() {
   const campsites = useSelector((state) => state.campsites.data);
   return (
-    <div className="font-primary w-full min-h-screen p-2">
+    <div className="font-primary w-full min-h-screen p-2 max-w-1920">
       <Header />
       {campsites.length > 0 && <CardList />}
     </div>
