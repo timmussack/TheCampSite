@@ -4,10 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-function DistanceSelect({ setRadius }) {
-  const [selectedDistance, setSelectedDistance] = useState('N/A');
-  const distances = ['N/A', '50', '100', '250', '500'];
-
+function DistanceSelect({ setRadius, selectedDistance, setSelectedDistance }) {
   const handleChange = (evt) => {
     setSelectedDistance(evt.target.value);
     setRadius(evt.target.value);

@@ -13,6 +13,7 @@ function Header() {
   const [radius, setRadius] = useState('N/A');
   const [filter, setFilter] = useState('N/A');
   const [coords, setCoords] = useState('N/A');
+  const [selectedDistance, setSelectedDistance] = useState('N/A');
 
   function sendToServer() {
     let rating = 'N/A';
@@ -41,29 +42,42 @@ function Header() {
   }
 
   return (
-    <div className="border-y-2 border-pop py-3 flex flex-wrap flex-row justify-around items-center sticky top-0 z-50 bg-neutral-50">
-      <TitleLogo />
-      <SearchBar setCoords={setCoords} setLocation={setLocation} />
+    <div className="sticky top-0 bg-neutral-50 absolute z-50">
+      <div className="border-y-2 border-pop py-3 flex flex-wrap flex-row justify-around bg-neutral-50 relative align-bottom">
+        <TitleLogo />
+        <SearchBar setCoords={setCoords} setLocation={setLocation} />
 
-      {/* on mobile disappears */}
-      {/* {location && <DistanceSelect setRadius={setRadius} />} */}
-      <DistanceSelect setRadius={setRadius} />
+        {/* on mobile disappears */}
+        {/* {location && <DistanceSelect setRadius={setRadius} />} */}
+        <DistanceSelect
+          setRadius={setRadius}
+          selectedDistance={selectedDistance}
+          setSelectedDistance={setSelectedDistance}
+        />
 
-      {/* on mobile disappears */}
-      <FilterBySelect filter={filter} setFilter={setFilter} />
+        {/* on mobile disappears */}
+        <FilterBySelect filter={filter} setFilter={setFilter} />
 
-      <button
-        type="submit"
-        onClick={() => sendToServer()}
-        className="py-2 px-4 text-sm text-primary rounded-2xl border border-primary"
-      >
-        Search
-      </button>
+        <button
+          type="submit"
+          onClick={() => sendToServer()}
+          className="py-2 px-4 text-sm text-primary rounded-2xl border border-primary"
+        >
+          Search
+        </button>
 
-      <LogInIcon />
+        <LogInIcon />
+      </div>
 
       {/* secondary filter bar shows on mobile only */}
-      <FilterBar location={location} setRadius={setRadius} setFilter={setFilter} />
+      <FilterBar
+        location={location}
+        setRadius={setRadius}
+        filter={filter}
+        setFilter={setFilter}
+        selectedDistance={selectedDistance}
+        setSelectedDistance={setSelectedDistance}
+      />
     </div>
   );
 }
