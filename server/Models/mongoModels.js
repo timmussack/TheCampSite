@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 
 // ======== CAMPSITE INFO (from API) ============ //
 
-const latLongSchema = new mongoose.Schema({
-  lat: Number,
-  lng: Number,
-});
-
 const addressSchema = new mongoose.Schema({
   postalCode: Number,
   city: String,
@@ -35,7 +30,9 @@ const campsiteSchema = new mongoose.Schema({
   weatherOverview: String,
   address: addressSchema,
   directions: String,
-  latLong: latLongSchema,
+  latLong: [{
+    type: Number,
+  }],
   multimedia: [{
     type: String,
   }],
@@ -68,12 +65,11 @@ const reviewSchema = new mongoose.Schema({
   }],
 });
 
-const LatLng = mongoose.model('LatLng', latLongSchema);
 const Address = mongoose.model('Address', addressSchema);
 const Campsite = mongoose.model('Campsite', campsiteSchema);
 const User = mongoose.model('User', userSchema);
 const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = {
-  LatLng, Address, Campsite, User, Review,
+  Address, Campsite, User, Review,
 };
