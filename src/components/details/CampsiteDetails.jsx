@@ -1,7 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Header from '../header/Header.jsx';
+import ReviewModal from '../reviews/ReviewModal.jsx';
 
 function CampsiteDetails() {
   // get data from redux store
@@ -20,6 +21,7 @@ function CampsiteDetails() {
       </h1>
       <p>{campsite.name}</p>
       <p>{campsite.description}</p>
+      <ReviewModal />
     </div>
   );
 }
