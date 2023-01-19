@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 const axios = require('axios');
 const path = require('path');
 const express = require('express');
@@ -45,6 +46,28 @@ app.get('/campsitesByReviews', (req, res) => {
 app.post('/addReview', (req, res) => {
   console.log(req.body);
   res.end('Received review');
+});
+
+app.get('/addUser', (req, res) => {
+  MongoModels.User.find({ userEmail: req.query.email })
+    .then((userRes) => {
+      if (userRes.length !== 0) {
+        res.sendStatus(200);
+      } else {
+        MongoModels.User.create({
+          userName: req.query.email.split('@')[0],
+          userEmail: req.query.email,
+          userPassword: '',
+          sitesVisited: [],
+          friendUserNames: [],
+        })
+          .then((val) => {
+            res.sendStatus(201);
+          })
+          .catch((err) => res.send(err));
+      }
+    })
+    .catch((err) => res.send(err));
 });
 
 app.post('/getFiltered', (req, res) => {

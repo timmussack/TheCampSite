@@ -1,6 +1,6 @@
 import React from 'react';
 import Autocomplete from 'react-google-autocomplete';
-import googleKey from '../../../googleApi.js';
+import googleKey from '../../../googleApi';
 
 const googleApi = googleKey.googleKey;
 
