@@ -1,8 +1,6 @@
 /* eslint-disable max-len */
-import React, { useEffect, useState } from 'react';
-import { FaUserAlt } from 'react-icons/fa';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
@@ -22,9 +20,15 @@ function LogInIcon() {
         },
       })
         .then((serverRes) => {
-          console.log(serverRes.data);
           dispatch(changeUser(serverRes.data));
-        });
+          // check if the user exists within the mongoose model and put in it there if it doesn't
+          return axios.get('http://localhost:4007/addUser', {
+            params: {
+              email: serverRes.data.email,
+            },
+          });
+        })
+        .catch((err) => console.log(err));
     },
   });
 
@@ -41,16 +45,6 @@ function LogInIcon() {
         </button>
       ) }
     </div>
-    // <button className="cursor-pointer transform transition duration-500 hover:scale-110 mr-3" type="button" onClick={() => navigate('/login')}>
-    //   <div className="flex flex-direction: row">
-    //     <FaUserAlt size={20} />
-
-  //     {/* text split so on mobile only "log in" shows */}
-  //     <p className="ml-1">Log in</p>
-  //     <p className="ml-1 hidden lg:flex"> or Sign up</p>
-  //   </div>
-  // </button>
-
   );
 }
 
