@@ -9,7 +9,7 @@ import Home from './home/Home.jsx';
 import Login from './login/Login.jsx';
 
 function App() {
-  const campsitesData = useSelector((state) => state.campsites.data);
+  const campsites = useSelector((state) => state.campsites.data);
   const dispatch = useDispatch();
 
   useEffect(() => {

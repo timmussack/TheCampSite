@@ -15,8 +15,8 @@ const Card = React.forwardRef((props, ref) => {
     <div
       role="button"
       tabIndex={0}
-      className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg w-72 m-6 p-2 transform transition duration-500 hover:scale-105"
-      onClick={() => navigate(`/campsite/${campsite.id}`)}
+      className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg w-72 m-6 p-2 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+      onClick={() => navigate(`/campsite/${campsite.id}`, { state: { campsite } })}
       onKeyPress={() => handleKeyPress()}
       ref={ref} // for inifinite scroll
     >
