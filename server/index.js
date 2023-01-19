@@ -42,6 +42,11 @@ app.get('/campsitesByReviews', (req, res) => {
     });
 });
 
+app.post('/addReview', (req, res) => {
+  console.log(req.body);
+  res.end('Received review');
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain

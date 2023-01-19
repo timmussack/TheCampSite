@@ -2,5 +2,5 @@ Instructions for getting nps route credentials
 
 - Go to [https://www.nps.gov/subjects/developer/get-started.htm](https://www.nps.gov/subjects/developer/get-started.htm) and fill out the form
 - Copy and paste the following into your .env file
-    - NPS_API_KEY = ‘YOUR API KEY’
-    - NPS_BASE_URL = "[https://developer.nps.gov/api/v1](https://developer.nps.gov/api/v1)"
+    - NPS_API_KEY = YOUR API KEY
+    - NPS_BASE_URL = https://developer.nps.gov/api/v1

@@ -34,9 +34,9 @@ function LogInIcon() {
 
   return (
     <div>
-      { user.name ? <button type="button" className="w-[160px] h-[24px] border border-black rounded-2xl py-4 px-2 flex items-center justify-center" onClick={handleLogout}>Sign out</button> : (
-        <button type="button" className="border border-black rounded-2xl px-2 py-1.5" onClick={() => login()}>
-          Sign in with Google 🚀
+      { user.name ? <button type="button" className="h-9 w-18 border border-primary rounded-2xl py-4 px-2 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop" onClick={handleLogout}>Sign out</button> : (
+        <button type="button" className="h-9 w-18 border border-primary rounded-2xl px-2 py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop" onClick={() => login()}>
+          Sign in 🚀
           {' '}
         </button>
       ) }
