@@ -52,10 +52,6 @@ function Header() {
       {/* on mobile disappears */}
       <FilterBySelect filter={filter} setFilter={setFilter} />
 
-      <LogInIcon />
-
-      {/* secondary filter bar shows on mobile only */}
-      <FilterBar location={location} setRadius={setRadius} setFilter={setFilter} />
       <button
         type="submit"
         onClick={() => sendToServer()}
@@ -63,6 +59,11 @@ function Header() {
       >
         Search
       </button>
+
+      <LogInIcon />
+
+      {/* secondary filter bar shows on mobile only */}
+      <FilterBar location={location} setRadius={setRadius} setFilter={setFilter} />
     </div>
   );
 }
