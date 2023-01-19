@@ -31,6 +31,17 @@ app.get('/getAllCampsites', (req, res) => {
     });
 });
 
+app.get('/campsitesByReviews', (req, res) => {
+  MongoModels.Campsite.find().sort({ numOfReviews: -1 })
+    .then((dbres) => {
+      res.send(dbres);
+    })
+    .catch((err) => {
+      console.log('error in campsitesByReviews', err);
+      res.send(err);
+    });
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
