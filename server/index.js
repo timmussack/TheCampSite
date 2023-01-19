@@ -75,6 +75,16 @@ app.post('/getFiltered', (req, res) => {
   getByAnything(req, res);
 });
 
+app.put('/favorite', (req, res) => {
+  console.log('favorite');
+  console.log(req.body);
+});
+
+app.put('/unfavorite', (req, res) => {
+  console.log('unfavorite');
+  console.log(req.body);
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
