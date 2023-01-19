@@ -14,7 +14,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get('http://localhost:3007/getAllCampsites')
+    axios.get('http://localhost:4007/getAllCampsites')
       .then((response) => {
         dispatch(changeData(response.data));
       });
