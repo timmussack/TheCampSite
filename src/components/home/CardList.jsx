@@ -15,12 +15,16 @@ function CardList() {
   const [startNumber, setStartNumber] = useState(0);
 
   // need full list to test inifinte scroll
-  const getData = (start) => {
+  const getData = (start, newList) => {
+    const list = newList || currentList;
     const slice = campsites.slice(start, start + 20);
-    setCurrentList([...currentList, ...slice]);
+    setCurrentList([...list, ...slice]);
     setHasMore(slice.length > 0);
     setLoading(false);
   };
+  useEffect(() => {
+    getData(0, []);
+  }, [campsites]);
 
   // runs when user reaches end of page
   // once data is fully figured out will also have it change when search, distance, or sort changes
