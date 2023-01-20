@@ -96,9 +96,9 @@ app.get('/addUser', (req, res) => {
   MongoModels.User.find({ userEmail: req.query.email })
     .then((userRes) => {
       if (userRes.length !== 0) {
-        const dbQuery = [];
+        const dbQuery = {};
         userRes[0].sitesVisited.forEach((siteString) => {
-          dbQuery.push(Number(siteString));
+          dbQuery[siteString] = true;
         });
         res.send({ campsiteIDs: dbQuery });
       } else {
@@ -176,14 +176,24 @@ app.post('/campsiteIDsByUser', (req, res) => {
   console.log(req.body);
   MongoModels.User.find({ userEmail: req.body.email })
     .then((dbRes) => {
-      const dbQuery = [];
+      const dbQuery = {};
       dbRes[0].sitesVisited.forEach((siteString) => {
-        dbQuery.push(Number(siteString));
+        dbQuery[siteString] = true;
       });
       res.send({ campsiteIDs: dbQuery });
     })
     .catch((err) => {
       console.log(err);
+      res.send(err);
+    });
+});
+
+app.post('/getReviewsByCampsite', (req, res) => {
+  MongoModels.Review.find({ campsiteID: req.body.id })
+    .then((dbRes) => {
+      res.send(dbRes);
+    })
+    .catch((err) => {
       res.send(err);
     });
 });
