@@ -20,7 +20,7 @@ function SearchBar() {
   }
 
   return (
-    <Autocomplete className="border-primary border rounded-2xl pl-3 h-9 w-56 mt-2 desktop:mt-0" placeholder="Search by location..." apiKey={`${googleApi}`} options={{ types: ['locality', 'administrative_area_level_3', 'street_address', 'park'] }} onPlaceSelected={(place) => { coords(place); }} />
+    <Autocomplete className="border-primary border rounded-2xl pl-3 h-9 w-56 desktop:mt-0 self-center" placeholder="Search by location..." apiKey={`${googleApi}`} options={{ types: ['locality', 'administrative_area_level_3', 'street_address', 'park'] }} onPlaceSelected={(place) => { coords(place); }} />
   );
 }
 
