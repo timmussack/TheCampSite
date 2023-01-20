@@ -96,7 +96,11 @@ app.get('/addUser', (req, res) => {
   MongoModels.User.find({ userEmail: req.query.email })
     .then((userRes) => {
       if (userRes.length !== 0) {
-        res.sendStatus(200);
+        const dbQuery = [];
+        userRes[0].sitesVisited.forEach((siteString) => {
+          dbQuery.push(Number(siteString));
+        });
+        res.send({ campsiteIDs: dbQuery });
       } else {
         MongoModels.User.create({
           userName: req.query.email.split('@')[0],
