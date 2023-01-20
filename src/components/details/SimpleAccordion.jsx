@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -8,6 +10,23 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // look into MUI typography
 function SimpleAccordion({ campsite }) {
   // console.log('campsite in accordion', campsite);
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    // axios call to get the reviews array
+    axios.post('/getReviewsByCampsite', {
+      id: campsite.id,
+    })
+      .then((res) => {
+        setReviews(res.data);
+      })
+      .catch((err) => {
+        console.log('error in getReviewsByCampsite call, SimpleAccordian.jsx :', err);
+      });
+  }, [campsite]);
+
+  console.log('logging reviews for campsite :', reviews);
+
   return (
     <div>
       <Accordion>
