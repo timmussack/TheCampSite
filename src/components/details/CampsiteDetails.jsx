@@ -6,6 +6,7 @@ import ReviewModal from '../reviews/ReviewModal.jsx';
 import CampsitePhotos from './CampsitePhotos.jsx';
 import SimpleAccordion from './SimpleAccordion.jsx';
 import TextRating from './TextRating.jsx';
+import PhotoModal from './PhotoModal.jsx';
 
 function CampsiteDetails() {
   // react router hook for dynamic routing
@@ -24,7 +25,8 @@ function CampsiteDetails() {
           <h3>{`${campsite.address.line1}, ${campsite.address.city},  ${campsite.address.postalCode}`}</h3>
         </div>
         <TextRating rating={campsite.averageRating} />
-        <CampsitePhotos photos={campsite.multimedia} />
+        {/* <CampsitePhotos photos={campsite.multimedia} /> */}
+        <PhotoModal photos={campsite.multimedia} />
         <SimpleAccordion campsite={campsite} />
 
         <ReviewModal
