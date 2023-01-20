@@ -6,14 +6,14 @@ import Header from '../header/Header.jsx';
 import ProfileCardList from './ProfileCardList.jsx';
 
 function Profile() {
-  const [campsites, setCampsites] = useState(null);
+  const [campsites, setCampsites] = useState([]);
   // get user data from redux store
   const user = useSelector((state) => state.currentUser.userData);
   // React-router hook that allows passing state from the useNavigate hook in <ProfileIcon/>
   const location = useLocation();
 
   useEffect(() => {
-    axios.post('http://localhost:4007/userCampsites', {
+    axios.post('http://localhost:4007/getCampsitesByUser', {
       email: user.email,
     })
       .then((response) => {
@@ -26,9 +26,9 @@ function Profile() {
   }, []);
 
   return (
-    <div className="font-primary w-full min-h-screen p-2 text-center">
+    <div className="font-primary w-full min-h-screen">
       <Header />
-      <h4 className="my-3 font-bold">
+      <h4 className="my-3 font-bold p-2 text-center">
         Welcome
         {' '}
         {location.state.user.name}
