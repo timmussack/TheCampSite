@@ -13,7 +13,7 @@ function Profile() {
   const location = useLocation();
 
   useEffect(() => {
-    axios.post('/userCampsites', {
+    axios.post('http://localhost:4007/userCampsites', {
       email: user.email,
     })
       .then((response) => {

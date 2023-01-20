@@ -145,6 +145,10 @@ app.put('/unfavorite', (req, res) => {
   console.log(req.body);
 });
 
+app.post('/userCampsites', (req, res) => {
+  console.log(req.body);
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
