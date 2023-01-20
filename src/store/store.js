@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import campsitesReducer from './campsitesReducer.js';
 import userReducer from './userReducer.js';
 import coordReducer from './coordReducer.js';
+import likesReducer from './likesReducer.js';
 
 const store = configureStore({
   reducer:
@@ -9,6 +10,7 @@ const store = configureStore({
     campsites: campsitesReducer,
     currentUser: userReducer,
     currentCoord: coordReducer,
+    likes: likesReducer,
   },
 });
 

@@ -5,11 +5,13 @@ import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeUser } from '../../store/userReducer';
+import { changeLikes } from '../../store/likesReducer';
 
 function LogInIcon() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.currentUser.userData);
   const dispatch = useDispatch();
+  let email;
   // console.log(user);
 
   const login = useGoogleLogin({
@@ -28,18 +30,46 @@ function LogInIcon() {
             },
           });
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err))
+        .then((res) => {
+          console.log(res.config.params.email);
+          axios.post('http://localhost:4007/campsiteIDsByUser', {
+            email: res.config.params.email,
+          })
+            .then((resp) => {
+              console.log('test email', resp.data.campsiteIDs);
+              dispatch(changeLikes(resp.data.campsiteIDs));
+            });
+        });
     },
   });
 
   function handleLogout() {
     dispatch(changeUser({}));
+    dispatch(changeLikes({}));
   }
+
+  // function getLikedSites() {
+  //   axios.post('http://localhost:4007/campsiteIDsByUser', {
+  //     email,
+  //   })
+  //     .then((res) => {
+  //       console.log('test email', email);
+  //       dispatch(changeLikes(res.data));
+  //     });
+  // }
 
   return (
     <div>
       { user.name ? <button type="button" className="h-9 w-18 border border-primary rounded-2xl py-4 px-2 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop" onClick={handleLogout}>Sign out</button> : (
-        <button type="button" className="h-9 w-18 border border-primary rounded-2xl px-2 py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop" onClick={() => login()}>
+        <button
+          type="button"
+          className="h-9 w-18 border border-primary rounded-2xl px-2 py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop"
+          onClick={() => {
+            login();
+            // getLikedSites();
+          }}
+        >
           Sign in 🚀
           {' '}
         </button>

@@ -1,15 +1,17 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Box, Modal, Typography } from '@mui/material';
+import { changeLikes, addLike, unliked } from '../../store/likesReducer.js';
 import Fire from './Fire.jsx';
 import FireFill from './FireFill.jsx';
 
 const axios = require('axios');
 
 const Card = React.forwardRef((props, ref) => {
+  const dispatch = useDispatch();
   const { campsite } = props;
 
   // react router hook used in onClick event of card element
@@ -19,6 +21,8 @@ const Card = React.forwardRef((props, ref) => {
   const coords = useSelector((state) => state.currentCoord.coordData);
   // get location state to conditionally render distance on card
   const location = useSelector((state) => state.currentCoord.location);
+  // get likes state to conditionally render likes on card
+  const likes = useSelector((state) => state.likes.userLikes);
 
   function distance(lat1, lon1, lat2, lon2, unit) {
     if ((lat1 == lat2) && (lon1 == lon2)) {
@@ -54,6 +58,16 @@ const Card = React.forwardRef((props, ref) => {
   const handleClose = () => setOpen(false);
   const user = useSelector((state) => state.currentUser.userData);
 
+  useEffect(() => {
+    if (user.email) {
+      if (likes.includes(campsite.id)) {
+        setLiked(true);
+      }
+    } else {
+      setLiked(false);
+    }
+  }, [likes]);
+
   const style = {
     position: 'absolute',
     top: '50%',
@@ -69,6 +83,8 @@ const Card = React.forwardRef((props, ref) => {
 
   function like() {
     if (user.email) {
+      // likes.push(campsite.id);
+      dispatch(addLike(campsite.id));
       setLiked(!liked);
       axios.put('/favorite', {
         email: user.email,
@@ -87,6 +103,11 @@ const Card = React.forwardRef((props, ref) => {
 
   function unlike() {
     if (user.email) {
+      console.log(campsite.id);
+      const index = likes.indexOf(campsite.id);
+      console.log('index', index);
+      console.log('array', likes);
+      dispatch(unliked(index));
       setLiked(!liked);
       axios.put('/unfavorite', {
         email: user.email,

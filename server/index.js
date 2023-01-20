@@ -173,6 +173,7 @@ app.post('/userCampsites', (req, res) => {
 });
 
 app.post('/campsiteIDsByUser', (req, res) => {
+  console.log(req.body);
   MongoModels.User.find({ userEmail: req.body.email })
     .then((dbRes) => {
       const dbQuery = [];
