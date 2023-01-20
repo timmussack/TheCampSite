@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ArrowUpIcon } from '@heroicons/react/20/solid';
