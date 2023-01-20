@@ -187,6 +187,16 @@ app.post('/campsiteIDsByUser', (req, res) => {
     });
 });
 
+app.post('/getReviewsByCampsite', (req, res) => {
+  MongoModels.Review.find({ campsiteID: req.body.id })
+    .then((dbRes) => {
+      res.send(dbRes);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
