@@ -11,7 +11,7 @@ function ProfileIcon() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="cursor-pointer">
       {/* {user.name && <FaUserAlt size={20} onClick={() => navigate('/profile', { state: { user } })} /> } */}
       {user.name && <Avatar alt="/broken-image.jpg" srcSet={user.picture} onClick={() => navigate('/profile', { state: { user } })} /> }
     </div>
