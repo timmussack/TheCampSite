@@ -45,8 +45,31 @@ app.get('/campsitesByReviews', (req, res) => {
 });
 
 app.post('/addReview', (req, res) => {
-  console.log(req.body);
-  res.end('Received review');
+  const newReview = new MongoModels.Review({
+    campsiteName: req.body.campsiteName,
+    campsiteID: req.body.campsiteID,
+    userName: req.body.userName,
+    description: req.body.description,
+    rating: req.body.rating,
+    photos: req.body.photos,
+  });
+  newReview.save()
+    .then((saveRes) => MongoModels.Campsite.find({ id: req.body.campsiteID }))
+    .then((findRes) => {
+      MongoModels.Campsite.findOneAndUpdate({ id: req.body.campsiteID }, {
+        $set: {
+          // eslint-disable-next-line max-len
+          averageRating: (findRes.numOfReviews * findRes.averageRating + req.body.rating) / (findRes.numOfReviews + 1),
+          numOfReviews: findRes.numOfReviews + 1,
+        },
+      });
+    })
+    .then((updateRes) => {
+      res.send('review added!');
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 });
 
 app.get('/addUser', (req, res) => {
