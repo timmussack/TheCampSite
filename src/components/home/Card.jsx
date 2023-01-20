@@ -3,7 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Box, Modal, Typography } from '@mui/material';
+import {
+  Box, Modal, Typography, Rating,
+} from '@mui/material';
+import ParkOutlinedIcon from '@mui/icons-material/ParkOutlined';
+import ParkIcon from '@mui/icons-material/Park';
 import { changeLikes, addLike, unliked } from '../../store/likesReducer.js';
 import Fire from './Fire.jsx';
 import FireFill from './FireFill.jsx';
@@ -160,10 +164,28 @@ const Card = React.forwardRef((props, ref) => {
 
           <h2 className="text-base">{campsite.campsiteName}</h2>
 
-          <p className="text-secondary">
-            {campsite.averageRating}
-            /5
-          </p>
+          <Box
+            sx={{
+              width: 90,
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <Rating
+              name="text-feedback"
+              size="small"
+              value={campsite.averageRating}
+              readOnly
+              precision={0.5}
+              icon={<ParkIcon style={{ opacity: 0.55, justify: 'right' }} fontSize="inherit" />}
+              emptyIcon={<ParkOutlinedIcon style={{ opacity: 0.55, justify: 'right' }} fontSize="inherit" />}
+              sx={{
+                '& .MuiRating-iconFilled': {
+                  color: 'green',
+                },
+              }}
+            />
+          </Box>
 
         </div>
 
