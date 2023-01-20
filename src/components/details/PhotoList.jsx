@@ -4,9 +4,9 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
 function PhotoList({ photos }) {
-  console.log('photos from photolist', photos);
+  // console.log('photos from photo list', photos);
   return (
-    <ImageList sx={{ width: 800, height: '100vh', mx: 'auto' }} cols={1} rowHeight={400}>
+    <ImageList sx={{ width: '100vw', height: '100vh', mx: 'auto' }} cols={1} rowHeight={400}>
       {photos.map((photo, index) => (
         <ImageListItem key={index}>
           <img
