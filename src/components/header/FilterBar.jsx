@@ -16,7 +16,7 @@ function FilterBar(props) {
 
   return (
 
-    <div className="md:hidden transition-all duration-150 flex flex-row justify-center border-b-2 border-b-[#6D9886] h-13">
+    <div id="navbar" className="md:hidden transition-all duration-150 flex flex-row justify-center border-b-2 border-b-[#6D9886] h-13">
 
       <FormControl sx={{ m: 1, minWidth: 120, borderRadius: '15px' }} size="small">
         <InputLabel id="demo-select-small" sx={{ borderRadius: '15px' }}>Distance</InputLabel>

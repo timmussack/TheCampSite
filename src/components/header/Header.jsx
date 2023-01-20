@@ -53,6 +53,7 @@ function Header() {
           setRadius={setRadius}
           selectedDistance={selectedDistance}
           setSelectedDistance={setSelectedDistance}
+          location={location}
         />
 
         {/* on mobile disappears */}
@@ -61,7 +62,7 @@ function Header() {
         <button
           type="submit"
           onClick={() => sendToServer()}
-          className="py-2 px-4 text-sm text-primary rounded-2xl border border-primary"
+          className="h-9 w-18 border border-primary rounded-2xl px-2 py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop self-center"
         >
           Search
         </button>
