@@ -62,7 +62,6 @@ function Header() {
           setRadius={setRadius}
           selectedDistance={selectedDistance}
           setSelectedDistance={setSelectedDistance}
-          location={location}
         />
 
         {/* on mobile disappears */}
