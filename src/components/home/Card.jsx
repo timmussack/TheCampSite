@@ -87,7 +87,7 @@ const Card = React.forwardRef((props, ref) => {
       >
         <Box sx={style}>
           <Typography id="modal-modal-description" sx={{ fontFamily: 'Jost' }}>
-            Log in to save a campsite
+            Log in to save a campsite.
           </Typography>
         </Box>
       </Modal>
