@@ -1,25 +1,18 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import Fire from './Fire.jsx';
-import FireFill from './FireFill.jsx';
+import { useNavigate, useSelector } from 'react-router-dom';
+import axios from 'axios';
+import Fire from '../home/Fire.jsx';
+import FireFill from '../home/FireFill.jsx';
 
-const axios = require('axios');
-
-const Card = React.forwardRef((props, ref) => {
+function ProfileCard({ campsite }) {
+  const [liked, setLiked] = useState(true);
+  const user = useSelector((state) => state.currentUser.userData);
   // react router hook used in onClick event of card element
   const navigate = useNavigate();
 
   function handleKeyPress() {
     // do stuff if we want to make this accessible to people using keyboard only
   }
-
-  const { campsite } = props;
-
-  const [liked, setLiked] = useState(false);
-  const user = useSelector((state) => state.currentUser.userData);
 
   function like() {
     if (user.email) {
@@ -56,7 +49,6 @@ const Card = React.forwardRef((props, ref) => {
   return (
     <div
       className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg max-w-90 md:w-72 m-6 p-0 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
-      ref={ref} // for inifinite scroll
     >
       <div className="relative">
         <img className="p-0 m-0 rounded-xl w-full" src={campsite.multimedia[0]} alt="" />
@@ -106,6 +98,6 @@ const Card = React.forwardRef((props, ref) => {
       </div>
     </div>
   );
-});
+}
 
-export default Card;
+export default ProfileCard;

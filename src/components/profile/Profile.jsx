@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../header/Header.jsx';
-import ProfileCards from './ProfileCards.jsx';
+import ProfileCardList from './ProfileCardList.jsx';
 
 function Profile() {
   const [campsites, setCampsites] = useState(null);
@@ -35,7 +35,7 @@ function Profile() {
         !
       </h4>
 
-      {campsites && <ProfileCards campsites={campsites} />}
+      {campsites && <ProfileCardList campsites={campsites} />}
     </div>
   );
 }
