@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 // look into MUI typography
 function SimpleAccordion({ campsite }) {
-  console.log('campsite in accordion', campsite);
+  // console.log('campsite in accordion', campsite);
   return (
     <div>
       <Accordion>
@@ -16,10 +16,10 @@ function SimpleAccordion({ campsite }) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Description</Typography>
+          <Typography sx={{ fontFamily: 'Jost' }}>Description</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>{campsite.description}</Typography>
+          <Typography sx={{ fontFamily: 'Jost' }}>{campsite.description}</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -28,10 +28,10 @@ function SimpleAccordion({ campsite }) {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Amenities</Typography>
+          <Typography sx={{ fontFamily: 'Jost' }}>Amenities</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontFamily: 'Jost' }}>
             <ul>
               <li>
                 Cellphone Reception:
@@ -68,10 +68,10 @@ function SimpleAccordion({ campsite }) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Contact Info</Typography>
+          <Typography sx={{ fontFamily: 'Jost' }}>Contact Info</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontFamily: 'Jost' }}>
             <ul>
               <li>
                 Email:

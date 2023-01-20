@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import campsitesReducer from './campsitesReducer.js';
-import userReducer from './userReducer';
+import userReducer from './userReducer.js';
+import coordReducer from './coordReducer.js';
 
 const store = configureStore({
   reducer:
   {
     campsites: campsitesReducer,
     currentUser: userReducer,
+    currentCoord: coordReducer,
   },
 });
 

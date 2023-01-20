@@ -17,7 +17,7 @@ function Home() {
         <footer className="sticky bottom-5 right-0 w-fill cursor-pointer">
           <div className="flex items-end justify-end sm:pr-[1%] pt-[100px]">
             <ArrowUpIcon
-              className="h-10 w-10 cursor-pointer"
+              className="h-9 w-9 pl-2 cursor-pointer"
             />
           </div>
         </footer>

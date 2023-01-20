@@ -97,6 +97,7 @@ app.get('/addUser', (req, res) => {
 });
 
 app.post('/getFiltered', (req, res) => {
+  console.log('loc:', req.body.loc);
   getByAnything(req, res);
 });
 
@@ -142,6 +143,10 @@ app.put('/unfavorite', (req, res) => {
       console.log(err);
       res.send(err);
     });
+  console.log(req.body);
+});
+
+app.post('/userCampsites', (req, res) => {
   console.log(req.body);
 });
 

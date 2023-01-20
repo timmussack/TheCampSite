@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Photo from './Photo.jsx';
 
 function CampsitePhotos({ photos }) {
-  console.log('Photos from cs photos', photos);
+  // console.log('Photos from cs photos', photos);
   // const [ , ] = useState( );
 
   // useEffect(() => {
