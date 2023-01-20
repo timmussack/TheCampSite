@@ -20,15 +20,7 @@ const Card = React.forwardRef((props, ref) => {
   // get location state to conditionally render distance on card
   const location = useSelector((state) => state.currentCoord.location);
 
-  // campsite.latLong[0] & campsite.latLong[1]
-  // latLong: [ -75.1727157999991, 38.1521378003843 ]
-
-  // coords.lat & coords.long
-  // loc: { lat: 42.0074879, long: -96.2497439 }
-
   function distance(lat1, lon1, lat2, lon2, unit) {
-    console.log('lat1:', lat1, 'lon1:', lon1);
-    console.log('lat2:', lat2, 'lon2:', lon2);
     if ((lat1 == lat2) && (lon1 == lon2)) {
       return 0;
     }
