@@ -97,6 +97,7 @@ app.get('/addUser', (req, res) => {
 });
 
 app.post('/getFiltered', (req, res) => {
+  console.log('loc:', req.body.loc);
   getByAnything(req, res);
 });
 

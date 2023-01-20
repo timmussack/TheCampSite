@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeData } from '../../store/campsitesReducer';
 import SearchBar from './SearchBar.jsx';
 import TitleLogo from './TitleLogo.jsx';
@@ -12,11 +12,15 @@ import ProfileIcon from '../profile/ProfileIcon.jsx';
 const axios = require('axios');
 
 function Header() {
-  const [location, setLocation] = useState(false);
+  // const [location, setLocation] = useState(false);
   const [radius, setRadius] = useState('N/A');
   const [filter, setFilter] = useState('N/A');
-  const [coords, setCoords] = useState('N/A');
+  // const [coords, setCoords] = useState('N/A');
   const dispatch = useDispatch();
+
+  const coords = useSelector((state) => state.currentCoord.coordData);
+
+  const location = useSelector((state) => state.currentCoord.location);
 
   function sendToServer() {
     let rating = 'N/A';
@@ -48,7 +52,7 @@ function Header() {
   return (
     <div className="border-y-2 border-pop py-3 flex flex-wrap flex-row justify-around items-center sticky top-0 z-50 bg-neutral-50">
       <TitleLogo />
-      <SearchBar setCoords={setCoords} setLocation={setLocation} />
+      <SearchBar />
 
       {/* on mobile disappears */}
       {location && <DistanceSelect setRadius={setRadius} />}

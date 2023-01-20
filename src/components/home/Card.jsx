@@ -10,14 +10,51 @@ import FireFill from './FireFill.jsx';
 const axios = require('axios');
 
 const Card = React.forwardRef((props, ref) => {
+  const { campsite } = props;
+
   // react router hook used in onClick event of card element
   const navigate = useNavigate();
 
-  function handleKeyPress() {
-    // do stuff if we want to make this accessible to people using keyboard only
+  // get coords from google search
+  const coords = useSelector((state) => state.currentCoord.coordData);
+  // get location state to conditionally render distance on card
+  const location = useSelector((state) => state.currentCoord.location);
+
+  // campsite.latLong[0] & campsite.latLong[1]
+  // latLong: [ -75.1727157999991, 38.1521378003843 ]
+
+  // coords.lat & coords.long
+  // loc: { lat: 42.0074879, long: -96.2497439 }
+
+  function distance(lat1, lon1, lat2, lon2, unit) {
+    console.log('lat1:', lat1, 'lon1:', lon1);
+    console.log('lat2:', lat2, 'lon2:', lon2);
+    if ((lat1 == lat2) && (lon1 == lon2)) {
+      return 0;
+    }
+
+    const radlat1 = (Math.PI * lat1) / 180;
+    const radlat2 = (Math.PI * lat2) / 180;
+    const theta = lon1 - lon2;
+    const radtheta = (Math.PI * theta) / 180;
+    let dist = Math.sin(radlat1) * Math.sin(radlat2)
+    + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    if (dist > 1) {
+      dist = 1;
+    }
+    dist = Math.acos(dist);
+    dist = (dist * 180) / Math.PI;
+    dist = dist * 60 * 1.1515;
+    if (unit == 'K') { dist *= 1.609344; }
+    if (unit == 'N') { dist *= 0.8684; }
+    return dist;
   }
 
-  const { campsite } = props;
+  const miles = distance(campsite.latLong[0], campsite.latLong[1], coords['long'], coords['lat'], 'M');
+
+  function handleKeyPress() {
+    // do stuff if we want to make the card click accessible to people using keyboard only
+  }
 
   const [liked, setLiked] = useState(false);
   const [open, setOpen] = useState(false);
@@ -117,7 +154,15 @@ const Card = React.forwardRef((props, ref) => {
 
         </div>
 
-        {/* <p className="text-secondary p-2">Distance: 500 miles</p> */}
+        { location && (
+          <p className="text-secondary p-2">
+            Straight Line Distance:
+            {' '}
+            {Math.floor(miles)}
+            {' '}
+            miles
+          </p>
+        ) }
 
         <p className="text-secondary mt-9 p-2">
           Staff on site:

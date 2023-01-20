@@ -1,13 +1,22 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Autocomplete from 'react-google-autocomplete';
+import { changeCoord, setLocation } from '../../store/coordReducer.js';
 import googleKey from '../../../googleApi';
 
 const googleApi = googleKey.googleKey;
 
-function SearchBar({ setCoords, setLocation }) {
+function SearchBar() {
+  const coordinates = useSelector((state) => state.currentCoord.coordData);
+  const location = useSelector((state) => state.currentCoord.location);
+  const dispatch = useDispatch();
   function coords(place) {
-    setCoords({ lat: place.geometry.location.lat(), long: place.geometry.location.lng() });
-    setLocation(true);
+    dispatch(changeCoord({
+      lat: place.geometry.location.lat(),
+      long: place.geometry.location.lng(),
+    }));
+    // setCoords({ lat: place.geometry.location.lat(), long: place.geometry.location.lng() });
+    dispatch(setLocation(!location));
   }
 
   return (
