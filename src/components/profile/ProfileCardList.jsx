@@ -11,11 +11,11 @@ function ProfileCardList({ campsites }) {
   }
 
   return (
-    <>
+    <div className="flex flex-wrap justify-center">
       {campsites.map((campsite) => (
-        <ProfileCard campsite={campsite} />
+        <ProfileCard key={campsite.id} campsite={campsite} />
       ))}
-    </>
+    </div>
   );
 }
 
