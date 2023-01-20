@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-import StarIcon from '@mui/icons-material/Star';
+import ParkOutlinedIcon from '@mui/icons-material/ParkOutlined';
+import ParkIcon from '@mui/icons-material/Park';
 
 const labels = {
   0.5: 'Useless',
@@ -32,7 +33,13 @@ function TextRating({ rating }) {
         value={value}
         readOnly
         precision={0.5}
-        emptyIcon={<StarIcon style={{ opacity: 0.55, justify: 'right' }} fontSize="inherit" />}
+        icon={<ParkIcon style={{ opacity: 0.55, justify: 'right' }} fontSize="inherit" />}
+        emptyIcon={<ParkOutlinedIcon style={{ opacity: 0.55, justify: 'right' }} fontSize="inherit" />}
+        sx={{
+          '& .MuiRating-iconFilled': {
+            color: 'green',
+          },
+        }}
       />
       {/* <Box sx={{ ml: 2 }}>{labels[value]}</Box> */}
     </Box>
