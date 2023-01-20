@@ -13,16 +13,12 @@ function FilterBar(props) {
     setSelectedDistance(evt.target.value);
     setRadius(evt.target.value);
   };
+
   return (
 
-    <div className="md:hidden mt-5 transition-all duration-150 flex flex-row justify-center border-b-2 border-b-[#6D9886]" id="navbar">
+    <div className="md:hidden transition-all duration-150 flex flex-row justify-center border-b-2 border-b-[#6D9886] h-13">
 
-      <FormControl
-        sx={{
-          m: 1, minWidth: 120, borderRadius: '15px', maxHeight: '10px',
-        }}
-        size="small"
-      >
+      <FormControl sx={{ m: 1, minWidth: 120, borderRadius: '15px' }} size="small">
         <InputLabel id="demo-select-small" sx={{ borderRadius: '15px' }}>Distance</InputLabel>
         <Select
           labelId="demo-select-small"
@@ -56,6 +52,7 @@ function FilterBar(props) {
         </Select>
       </FormControl>
     </div>
+
   );
 }
 
