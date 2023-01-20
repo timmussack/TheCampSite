@@ -41,7 +41,7 @@ function TextRating({ rating }) {
           },
         }}
       />
-      <Box sx={{ ml: 2 }}>{labels[value]}</Box>
+      {/* <Box sx={{ ml: 2 }}>{labels[value]}</Box> */}
     </Box>
   );
 }
