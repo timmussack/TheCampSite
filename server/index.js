@@ -59,7 +59,8 @@ app.post('/addReview', (req, res) => {
       const currRating = findRes[0].averageRating;
       const currNumOfReviews = findRes[0].numOfReviews;
       const newNumOfReviews = currNumOfReviews + 1;
-      const newRating = (currRating * currNumOfReviews + req.body.rating) / newNumOfReviews;
+      const newRating = Math.round(((currRating * currNumOfReviews + req.body.rating)
+      / newNumOfReviews) * 100) / 100;
       return MongoModels.Campsite.findOneAndUpdate({ id: req.body.campsiteID }, {
         averageRating: newRating,
         numOfReviews: newNumOfReviews,
@@ -107,11 +108,40 @@ app.get('/campsiteReviews', (req, res) => {
 
 app.put('/favorite', (req, res) => {
   console.log('favorite');
-  console.log(req.body);
+  MongoModels.User.findOneAndUpdate(
+    { userEmail: req.body.email },
+    { $push: { sitesVisited: req.body.campsite.toString() } },
+  )
+    .then((dbRes) => {
+      res.send('success!');
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 });
 
 app.put('/unfavorite', (req, res) => {
   console.log('unfavorite');
+  MongoModels.User.find({ userEmail: req.body.email })
+    .then((dbRes) => {
+      const newSitesVisited = [];
+      dbRes[0].sitesVisited.forEach((siteString) => {
+        if (Number(siteString) !== req.body.campsite) {
+          newSitesVisited.push(siteString);
+        }
+      });
+      return MongoModels.User.findOneAndUpdate(
+        { userEmail: req.body.email },
+        { sitesVisited: newSitesVisited },
+      );
+    })
+    .then((updateRes) => {
+      res.send('success!');
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send(err);
+    });
   console.log(req.body);
 });
 
