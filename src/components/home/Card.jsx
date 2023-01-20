@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { Box, Modal, Typography } from '@mui/material';
 import Fire from './Fire.jsx';
 import FireFill from './FireFill.jsx';
 
@@ -19,7 +20,23 @@ const Card = React.forwardRef((props, ref) => {
   const { campsite } = props;
 
   const [liked, setLiked] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const user = useSelector((state) => state.currentUser.userData);
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 250,
+    bgcolor: 'background.paper',
+    border: '1px solid #212121',
+    borderRadius: '30px',
+    boxShadow: 24,
+    p: 4,
+  };
 
   function like() {
     if (user.email) {
@@ -34,6 +51,8 @@ const Card = React.forwardRef((props, ref) => {
         .catch((err) => {
           console.log(err);
         });
+    } else {
+      handleOpen();
     }
   }
 
@@ -50,6 +69,8 @@ const Card = React.forwardRef((props, ref) => {
         .catch((err) => {
           console.log(err);
         });
+    } else {
+      handleOpen();
     }
   }
 
@@ -58,6 +79,18 @@ const Card = React.forwardRef((props, ref) => {
       className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg max-w-90 md:w-72 m-6 p-0 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
       ref={ref} // for inifinite scroll
     >
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-description" sx={{ fontFamily: 'Jost' }}>
+            Log in to save a campsite
+          </Typography>
+        </Box>
+      </Modal>
       <div className="relative">
         <img className="p-0 m-0 rounded-xl w-full" src={campsite.multimedia[0]} alt="" />
         {!liked && (
@@ -86,13 +119,13 @@ const Card = React.forwardRef((props, ref) => {
 
         {/* <p className="text-secondary p-2">Distance: 500 miles</p> */}
 
-        <p className="text-secondary mt-9">
+        <p className="text-secondary mt-9 p-2">
           Staff on site:
           {' '}
           {campsite.amenities.staffOrVulnteerHostOnSite}
         </p>
 
-        <p className="text-secondary">
+        <p className="text-secondary p-2">
           Phone Number:
           {' '}
           {campsite.campsitePhone || 'Not listed'}
@@ -101,7 +134,7 @@ const Card = React.forwardRef((props, ref) => {
         <p className="text-secondary p-2">
           Number of sites:
           {' '}
-          {campsite.totalSites}
+          {campsite.totalSites || 'Not listed'}
         </p>
       </div>
     </div>

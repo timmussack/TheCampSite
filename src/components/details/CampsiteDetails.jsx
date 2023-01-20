@@ -19,9 +19,9 @@ function CampsiteDetails() {
   return (
     <div className="font-primary w-full min-h-screen p-2">
       <Header />
-      <div className="mr-auto ml-auto max-w-screen-lg">
-        <div className="flex flex-col">
-          <h2>{campsite.campsiteName}</h2>
+      <div className="mr-auto ml-auto max-w-xl justify-center items-center">
+        <div className="flex flex-col mt-6">
+          <h2 className="font-bold">{campsite.campsiteName}</h2>
           <h3>{`${campsite.address.line1}, ${campsite.address.city},  ${campsite.address.postalCode}`}</h3>
         </div>
         <TextRating rating={campsite.averageRating} />
