@@ -76,7 +76,7 @@ const Card = React.forwardRef((props, ref) => {
 
   return (
     <div
-      className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg max-w-90 md:w-72 m-6 p-0 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+      className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg max-w-90 md:w-72 my-5 mx-5 p-0 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
       ref={ref} // for inifinite scroll
     >
       <Modal

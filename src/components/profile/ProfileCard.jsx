@@ -69,7 +69,7 @@ function ProfileCard({ campsite }) {
 
   return (
     <div
-      className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg max-w-90 md:w-72 m-6 p-0 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
+      className="flex flex-col bg-white cursor-pointer rounded-xl shadow-lg max-w-90 md:w-72 my-6 mx-8 p-0 transform transition duration-500 hover:scale-105 hover:shadow-2xl"
     >
       <Modal
         open={open}
