@@ -22,6 +22,8 @@ function FilterBar(props) {
     setSelectedDistance(evt.target.value);
     setRadius(evt.target.value);
   };
+
+  // handles popover for distance select
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handlePopoverOpen = (event) => {
@@ -38,12 +40,12 @@ function FilterBar(props) {
 
   return (
 
-    <div className="md:hidden flex flex-row justify-center border-b-2 border-b-[#6D9886] m-1">
+    <div className="md:hidden flex flex-row justify-evenly border-b-2 border-b-[#6D9886] m-1">
       {!location
       && (
         <div className="md:hidden">
           <FormControl
-            sx={{ m: 1, minWidth: 120, borderRadius: '15px' }}
+            sx={{ m: 0.5, minWidth: 120, borderRadius: '15px' }}
             size="small"
             disabled
             aria-owns={open ? 'mouse-over-popover' : undefined}
@@ -51,14 +53,14 @@ function FilterBar(props) {
             onMouseEnter={handlePopoverOpen}
             onMouseLeave={handlePopoverClose}
           >
-            <InputLabel id="demo-simple-select-small-disabled-label" sx={{ borderRadius: '15px' }}>Distance</InputLabel>
+            <InputLabel id="demo-simple-select-small-disabled-label" sx={{ borderRadius: '15px' }} size="small">Distance</InputLabel>
             <Select
               labelId="demo-simple-select-disabled-label-small"
               id="demo-simple-select-disabled-small"
               value={selectedDistance}
               label="Distance"
               onChange={(evt) => handleChange(evt)}
-              sx={{ borderRadius: '15px', background: 'white', fontSize: '10px' }}
+              sx={{ borderRadius: '15px', background: 'white', fontSize: '14px' }}
             >
               <MenuItem value="N/A">Any</MenuItem>
             </Select>
@@ -93,15 +95,20 @@ function FilterBar(props) {
       {location
     && (
       <div className="md:hidden">
-        <FormControl sx={{ m: 1, minWidth: 120, borderRadius: '15px' }} size="small">
-          <InputLabel id="demo-select-small" sx={{ borderRadius: '15px' }}>Distance</InputLabel>
+        <FormControl
+          sx={{
+            m: 0.5, minWidth: 120, borderRadius: '15px', fontSize: '10px',
+          }}
+          size="small"
+        >
+          <InputLabel id="demo-select-small" sx={{ borderRadius: '15px' }} className="text-sm">Distance</InputLabel>
           <Select
             labelId="demo-select-small"
             id="demo-select-small"
             value={selectedDistance}
             label="Distance"
             onChange={(evt) => handleChange(evt)}
-            sx={{ borderRadius: '15px', background: 'white', fontSize: '10px' }}
+            sx={{ borderRadius: '15px', background: 'white', fontSize: '14px' }}
           >
             <MenuItem value="N/A">Any</MenuItem>
             <MenuItem value="50">50</MenuItem>
@@ -113,7 +120,7 @@ function FilterBar(props) {
       </div>
     )}
 
-      <FormControl sx={{ m: 1, minWidth: 120, borderRadius: '15px' }} size="small">
+      <FormControl sx={{ m: 0.5, minWidth: 120, borderRadius: '15px' }} size="small">
         <InputLabel id="demo-select-small" sx={{ borderRadius: '15px' }}>Sort By</InputLabel>
         <Select
           labelId="demo-select-small"
@@ -121,7 +128,7 @@ function FilterBar(props) {
           value={filter}
           label="Sort By"
           onChange={(e) => setFilter(e.target.value)}
-          sx={{ borderRadius: '15px', background: 'white', fontSize: '10px' }}
+          sx={{ borderRadius: '15px', background: 'white', fontSize: '14px' }}
         >
           <MenuItem value="N/A">Default</MenuItem>
           <MenuItem value="mostReviews">Number of Reviews</MenuItem>

@@ -51,9 +51,9 @@ function Header() {
   }
 
   return (
-    <div className="sticky top-0 bg-neutral-50 absolute z-50 mt-3px">
+    <div className="sticky top-0 relative bg-neutral-50 z-50 mt-3px py-2">
 
-      <div className="border-y-2 border-pop py-0 md:py-3 flex flex-wrap flex-row justify-around bg-neutral-50 relative align-bottom">
+      <div className="border-t-2 md:border-y-2 border-pop py-1 md:py-3 flex flex-wrap flex-row justify-evenly bg-neutral-50">
 
         <TitleLogo />
 
