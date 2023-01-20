@@ -11,7 +11,6 @@ function TitleLogo() {
   const dispatch = useDispatch();
 
   function handleClick() {
-    console.log('clicked');
     axios.get('http://localhost:4007/getAllCampsites')
       .then((response) => {
         dispatch(changeData(response.data));
