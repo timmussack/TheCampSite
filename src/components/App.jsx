@@ -16,7 +16,6 @@ function App() {
   useEffect(() => {
     axios.get('http://localhost:4007/getAllCampsites')
       .then((response) => {
-        console.log(response.data);
         dispatch(changeData(response.data));
       });
   }, []);
