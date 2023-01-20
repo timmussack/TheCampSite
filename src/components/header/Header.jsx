@@ -16,6 +16,7 @@ function Header() {
   const [radius, setRadius] = useState('N/A');
   const [filter, setFilter] = useState('N/A');
   // const [coords, setCoords] = useState('N/A');
+  const [selectedDistance, setSelectedDistance] = useState('N/A');
   const dispatch = useDispatch();
 
   const coords = useSelector((state) => state.currentCoord.coordData);
@@ -50,31 +51,48 @@ function Header() {
   }
 
   return (
-    <div className="border-y-2 border-pop py-3 flex flex-wrap flex-row justify-around items-center sticky top-0 z-50 bg-neutral-50">
-      <TitleLogo />
-      <SearchBar />
+    <div className="sticky top-0 relative bg-neutral-50 z-50 mt-3px py-2">
 
-      {/* on mobile disappears */}
-      {location && <DistanceSelect setRadius={setRadius} />}
+      <div className="border-t-2 md:border-y-2 border-pop py-1 md:py-3 flex flex-wrap flex-row justify-evenly bg-neutral-50">
 
-      {/* on mobile disappears */}
-      <FilterBySelect setFilter={setFilter} />
+        <TitleLogo />
 
-      <LogInIcon />
+        <SearchBar />
+
+        {/* on mobile disappears */}
+        <DistanceSelect
+          setRadius={setRadius}
+          selectedDistance={selectedDistance}
+          setSelectedDistance={setSelectedDistance}
+        />
+
+        {/* on mobile disappears */}
+        <FilterBySelect filter={filter} setFilter={setFilter} />
+
+        <button
+          type="submit"
+          onClick={() => sendToServer()}
+          className="sm:h-9 sm:w-20 border border-primary rounded-2xl px-2 md:py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop self-center"
+        >
+          Search
+        </button>
+
+        {/* show if not logged in */}
+        <LogInIcon />
+
+        {/* only shows up if a user is logged in */}
+        <ProfileIcon />
+      </div>
 
       {/* secondary filter bar shows on mobile only */}
-      <FilterBar location={location} setRadius={setRadius} setFilter={setFilter} />
-      <button
-        type="submit"
-        onClick={() => sendToServer()}
-        className="py-2 px-4 text-sm text-primary rounded-2xl border border-primary"
-      >
-        Search
-      </button>
-      <FilterBar />
+      <FilterBar
+        setRadius={setRadius}
+        filter={filter}
+        setFilter={setFilter}
+        selectedDistance={selectedDistance}
+        setSelectedDistance={setSelectedDistance}
+      />
 
-      {/* only shows up if a user is logged in */}
-      <ProfileIcon />
     </div>
   );
 }
