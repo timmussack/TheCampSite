@@ -39,7 +39,8 @@
         "import/no-extraneous-dependencies": 0,
         "global-require": 0,
         "eqeqeq": 0,
-        "dot-notation": 0
+        "dot-notation": 0,
+        "react/no-array-index-key": 0
     },
     "settings": {
         "react": {
