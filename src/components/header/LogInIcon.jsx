@@ -60,20 +60,27 @@ function LogInIcon() {
   // }
 
   return (
-    <div>
-      { user.name ? <button type="button" className="h-9 w-18 border border-primary rounded-2xl py-4 px-2 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop" onClick={handleLogout}>Sign out</button> : (
-        <button
-          type="button"
-          className="h-9 w-18 border border-primary rounded-2xl px-2 py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop"
-          onClick={() => {
-            login();
-            // getLikedSites();
-          }}
-        >
-          Sign in 🚀
-          {' '}
-        </button>
-      ) }
+    <div className="self-center">
+      { user.name
+        ? (
+          <button
+            type="button"
+            className="sm:h-9 sm:w-25 border border-primary rounded-2xl md:py-1.5 px-2 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop"
+            onClick={handleLogout}
+          >
+            Sign out
+          </button>
+        )
+        : (
+          <button
+            type="button"
+            className="sm:h-9 sm:w-25 border border-primary rounded-2xl px-2 md:py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop"
+            onClick={() => login()}
+          >
+            Sign in 🚀
+            {' '}
+          </button>
+        ) }
     </div>
   );
 }
