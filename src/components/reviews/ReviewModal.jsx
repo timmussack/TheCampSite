@@ -16,7 +16,7 @@ function ReviewModal({ campsite }) {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState(0);
   const [hover, setHover] = useState(-1);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -123,9 +123,6 @@ function ReviewModal({ campsite }) {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-              Text in a modal
-            </Typography> */}
             <Typography id="modal-modal-description" sx={{ fontFamily: 'Jost' }}>
               Log in to leave a review.
             </Typography>
