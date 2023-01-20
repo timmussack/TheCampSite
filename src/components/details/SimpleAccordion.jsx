@@ -6,27 +6,24 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import ViewAllReviewsModal from './ViewAllReviewsModal.jsx';
+// import ReviewCard from './ReviewCard.jsx';
 // look into MUI typography
 function SimpleAccordion({ campsite }) {
-  // console.log('campsite in accordion', campsite);
   const [reviews, setReviews] = useState([]);
-
   useEffect(() => {
     // axios call to get the reviews array
-    axios.post('/getReviewsByCampsite', {
+    axios.post('http://localhost:4007/getReviewsByCampsite', {
       id: campsite.id,
     })
       .then((res) => {
         setReviews(res.data);
       })
       .catch((err) => {
-        console.log('error in getReviewsByCampsite call, SimpleAccordian.jsx :', err);
+        console.log('error in getReviewsByCampsite call, SimpleAccordion.jsx :', err);
       });
   }, [campsite]);
-
-  console.log('logging reviews for campsite :', reviews);
-
+  console.log('reviews state', reviews);
   return (
     <div>
       <Accordion>
@@ -106,8 +103,19 @@ function SimpleAccordion({ campsite }) {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography sx={{ fontFamily: 'Jost' }}>Reviews</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <ViewAllReviewsModal reviews={reviews} />
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 }
-
 export default SimpleAccordion;

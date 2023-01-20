@@ -34,7 +34,7 @@ function TextRating({ rating }) {
         precision={0.5}
         emptyIcon={<StarIcon style={{ opacity: 0.55, justify: 'right' }} fontSize="inherit" />}
       />
-      <Box sx={{ ml: 2 }}>{labels[value]}</Box>
+      {/* <Box sx={{ ml: 2 }}>{labels[value]}</Box> */}
     </Box>
   );
 }
