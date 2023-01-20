@@ -51,13 +51,15 @@ function Header() {
   }
 
   return (
-    <div className="sticky top-0 bg-neutral-50 absolute z-50">
-      <div className="border-y-2 border-pop py-3 flex flex-wrap flex-row justify-around bg-neutral-50 relative align-bottom">
+    <div className="sticky top-0 bg-neutral-50 absolute z-50 mt-3px">
+
+      <div className="border-y-2 border-pop py-0 md:py-3 flex flex-wrap flex-row justify-around bg-neutral-50 relative align-bottom">
+
         <TitleLogo />
+
         <SearchBar />
 
         {/* on mobile disappears */}
-        {/* {location && <DistanceSelect setRadius={setRadius} />} */}
         <DistanceSelect
           setRadius={setRadius}
           selectedDistance={selectedDistance}
@@ -75,22 +77,22 @@ function Header() {
           Search
         </button>
 
+        {/* show if not logged in */}
         <LogInIcon />
+
+        {/* only shows up if a user is logged in */}
+        <ProfileIcon />
       </div>
 
       {/* secondary filter bar shows on mobile only */}
       <FilterBar
-        location={location}
         setRadius={setRadius}
         filter={filter}
         setFilter={setFilter}
         selectedDistance={selectedDistance}
         setSelectedDistance={setSelectedDistance}
       />
-      <FilterBar />
 
-      {/* only shows up if a user is logged in */}
-      <ProfileIcon />
     </div>
   );
 }

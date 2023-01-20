@@ -27,7 +27,7 @@ function DistanceSelect({ setRadius, selectedDistance, setSelectedDistance }) {
 
   const location = useSelector((state) => state.currentCoord.location);
   return (
-    <div>
+    <div className="hidden md:flex">
 
       {/* select menu is disabled until location is entered */}
       {!location
