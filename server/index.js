@@ -81,6 +81,16 @@ app.get('/campsiteReviews', (req, res) => {
     .catch((err) => res.send(err));
 });
 
+app.put('/favorite', (req, res) => {
+  console.log('favorite');
+  console.log(req.body);
+});
+
+app.put('/unfavorite', (req, res) => {
+  console.log('unfavorite');
+  console.log(req.body);
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
