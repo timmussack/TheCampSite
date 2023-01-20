@@ -96,9 +96,9 @@ app.get('/addUser', (req, res) => {
   MongoModels.User.find({ userEmail: req.query.email })
     .then((userRes) => {
       if (userRes.length !== 0) {
-        const dbQuery = {};
+        const dbQuery = [];
         userRes[0].sitesVisited.forEach((siteString) => {
-          dbQuery[siteString] = true;
+          dbQuery.push(Number(siteString));
         });
         res.send({ campsiteIDs: dbQuery });
       } else {
@@ -175,9 +175,9 @@ app.post('/userCampsites', (req, res) => {
 app.post('/campsiteIDsByUser', (req, res) => {
   MongoModels.User.find({ userEmail: req.body.email })
     .then((dbRes) => {
-      const dbQuery = {};
+      const dbQuery = [];
       dbRes[0].sitesVisited.forEach((siteString) => {
-        dbQuery[siteString] = true;
+        dbQuery.push(Number(siteString));
       });
       res.send({ campsiteIDs: dbQuery });
     })
