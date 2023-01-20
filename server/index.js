@@ -56,15 +56,17 @@ app.post('/addReview', (req, res) => {
   newReview.save()
     .then((saveRes) => MongoModels.Campsite.find({ id: req.body.campsiteID }))
     .then((findRes) => {
-      MongoModels.Campsite.findOneAndUpdate({ id: req.body.campsiteID }, {
-        $set: {
-          // eslint-disable-next-line max-len
-          averageRating: (findRes.numOfReviews * findRes.averageRating + req.body.rating) / (findRes.numOfReviews + 1),
-          numOfReviews: findRes.numOfReviews + 1,
-        },
+      const currRating = findRes[0].averageRating;
+      const currNumOfReviews = findRes[0].numOfReviews;
+      const newNumOfReviews = currNumOfReviews + 1;
+      const newRating = (currRating * currNumOfReviews + req.body.rating) / newNumOfReviews;
+      return MongoModels.Campsite.findOneAndUpdate({ id: req.body.campsiteID }, {
+        averageRating: newRating,
+        numOfReviews: newNumOfReviews,
       });
     })
     .then((updateRes) => {
+      console.log('dbRes from findOneAndUpdate', updateRes);
       res.send('review added!');
     })
     .catch((err) => {
