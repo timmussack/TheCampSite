@@ -168,6 +168,21 @@ app.post('/userCampsites', (req, res) => {
   console.log(req.body);
 });
 
+app.post('/campsiteIDsByUser', (req, res) => {
+  MongoModels.User.find({ userEmail: req.body.email })
+    .then((dbRes) => {
+      const dbQuery = [];
+      dbRes[0].sitesVisited.forEach((siteString) => {
+        dbQuery.push(Number(siteString));
+      });
+      res.send({ campsiteIDs: dbQuery });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send(err);
+    });
+});
+
 /* ======= ======== ======== CATCH ALL ROUTE ======== ======== ====== */
 
 // handle every other route with index.html, which will contain
