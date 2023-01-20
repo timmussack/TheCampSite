@@ -19,9 +19,7 @@ function SimpleAccordion({ campsite }) {
           <Typography>Description</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            {campsite.description}
-          </Typography>
+          <Typography>{campsite.description}</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -38,16 +36,12 @@ function SimpleAccordion({ campsite }) {
               <li>
                 Cellphone Reception:
                 {' '}
-                {`${campsite.amenities.cellPhoneReception
-                }`}
-
+                {`${campsite.amenities.cellPhoneReception}`}
               </li>
               <li>
                 Firewood available for sale:
                 {' '}
-                {`${campsite.amenities.firewoodAvailableForSale
-                }`}
-
+                {`${campsite.amenities.firewoodAvailableForSale}`}
               </li>
               <li>
                 Ice avalabile for sale:
@@ -57,16 +51,12 @@ function SimpleAccordion({ campsite }) {
               <li>
                 Internet Access:
                 {' '}
-                {`${campsite.amenities.internetConnectivity
-                }`}
-
+                {`${campsite.amenities.internetConnectivity}`}
               </li>
               <li>
                 Staff on Site:
                 {' '}
-                {`${campsite.amenities.staffOrVulnteerHostOnSite
-                }`}
-
+                {`${campsite.amenities.staffOrVulnteerHostOnSite}`}
               </li>
             </ul>
           </Typography>
@@ -85,14 +75,15 @@ function SimpleAccordion({ campsite }) {
             <ul>
               <li>
                 Email:
+                {' '}
                 {`${campsite.campsiteEmail}`}
               </li>
               <li>
                 Phone:
+                {' '}
                 {`${campsite.campsitePhone}`}
               </li>
             </ul>
-
           </Typography>
         </AccordionDetails>
       </Accordion>
