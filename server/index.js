@@ -74,6 +74,24 @@ app.post('/addReview', (req, res) => {
     });
 });
 
+app.post('/getCampsitesByUser', (req, res) => {
+  MongoModels.User.find({ userEmail: req.body.email })
+    .then((dbRes) => {
+      const dbQuery = [];
+      dbRes[0].sitesVisited.forEach((siteString) => {
+        dbQuery.push(Number(siteString));
+      });
+      return MongoModels.Campsite.find({ id: { $in: dbQuery } });
+    })
+    .then((findRes) => {
+      res.send(findRes);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send(err);
+    });
+});
+
 app.get('/addUser', (req, res) => {
   MongoModels.User.find({ userEmail: req.query.email })
     .then((userRes) => {
