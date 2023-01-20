@@ -9,7 +9,7 @@ function Home() {
   const campsites = useSelector((state) => state.campsites.data);
   return (
     <div>
-      <div className="font-primary w-full min-h-screen p-2 max-w-1920">
+      <div className="font-primary w-screen min-h-screen max-w-1920">
         <Header />
         {campsites.length > 0 && <CardList />}
       </div>
