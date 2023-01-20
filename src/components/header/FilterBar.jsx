@@ -58,7 +58,7 @@ function FilterBar(props) {
               value={selectedDistance}
               label="Distance"
               onChange={(evt) => handleChange(evt)}
-              sx={{ borderRadius: '15px', background: 'white', fontSize: '12px' }}
+              sx={{ borderRadius: '15px', background: 'white', fontSize: '10px' }}
             >
               <MenuItem value="N/A">Any</MenuItem>
             </Select>
@@ -101,7 +101,7 @@ function FilterBar(props) {
             value={selectedDistance}
             label="Distance"
             onChange={(evt) => handleChange(evt)}
-            sx={{ borderRadius: '15px', background: 'white', fontSize: '12px' }}
+            sx={{ borderRadius: '15px', background: 'white', fontSize: '10px' }}
           >
             <MenuItem value="N/A">Any</MenuItem>
             <MenuItem value="50">50</MenuItem>
@@ -113,24 +113,6 @@ function FilterBar(props) {
       </div>
     )}
 
-      {/* <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-        <InputLabel id="demo-select-small">Distance</InputLabel>
-        <Select
-          labelId="demo-select-small"
-          id="demo-select-small"
-          value={selectedDistance}
-          label="Distance"
-          onChange={(evt) => handleChangeDistance(evt)}
-          sx={{ borderRadius: '15px', background: 'white', fontSize: '12px' }}
-        >
-          <MenuItem value="N/A">Any</MenuItem>
-          <MenuItem value="50">50</MenuItem>
-          <MenuItem value="100">100</MenuItem>
-          <MenuItem value="250">250</MenuItem>
-          <MenuItem value="500">500</MenuItem>
-        </Select>
-      </FormControl> */}
-
       <FormControl sx={{ m: 1, minWidth: 120, borderRadius: '15px' }} size="small">
         <InputLabel id="demo-select-small" sx={{ borderRadius: '15px' }}>Sort By</InputLabel>
         <Select
@@ -139,7 +121,7 @@ function FilterBar(props) {
           value={filter}
           label="Sort By"
           onChange={(e) => setFilter(e.target.value)}
-          sx={{ borderRadius: '15px', background: 'white', fontSize: '12px' }}
+          sx={{ borderRadius: '15px', background: 'white', fontSize: '10px' }}
         >
           <MenuItem value="N/A">Default</MenuItem>
           <MenuItem value="mostReviews">Number of Reviews</MenuItem>

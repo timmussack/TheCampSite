@@ -72,7 +72,7 @@ function Header() {
         <button
           type="submit"
           onClick={() => sendToServer()}
-          className="h-9 w-18 border border-primary rounded-2xl px-2 py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop self-center"
+          className="sm:h-9 sm:w-20 border border-primary rounded-2xl px-2 md:py-1.5 transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-pop self-center"
         >
           Search
         </button>
