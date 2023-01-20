@@ -66,7 +66,6 @@ app.post('/addReview', (req, res) => {
       });
     })
     .then((updateRes) => {
-      console.log('dbRes from findOneAndUpdate', updateRes);
       res.send('review added!');
     })
     .catch((err) => {
