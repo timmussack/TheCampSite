@@ -1,5 +1,5 @@
 # TheCampSite
-This is a website created in 5 days the Hack Reacter (HR) bootcamp. Our team met with a fictional client played by a HR staff member. Our client hired us to create a website that allows users to find and research campgrounds. We worked in an agile environment, held daily stand-up meetings and used a Scrum board on Trello to track work tickets.
+This is a website created in 5 days during the Hack Reacter (HR) full-stack immersive bootcamp. Our team met with a fictional client played by a HR staff member. Our client hired us to create a website that allows users to find and research campgrounds. We worked in an agile environment, held daily stand-up meetings and used a Scrum board on Trello to track work tickets.
 
 ## Features
 - Mobile friendly
