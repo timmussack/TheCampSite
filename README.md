@@ -1,5 +1,5 @@
 # TheCampSite
-Team Biscay Bay's Blue Ocean Project! 
+This is a group project created in 5 working days during the Hack Reacter (HR) bootcamp. Our team met with a fictional client played by HR staff member. Our client hired us to create a website that allows users to search for campgrounds based on distance from their location, number of reviews and average review rating. The application features user authentication through google, a user profile page for "liked" campsites, and the ability to leave user reviews.
 
 ## Contributors<br />
 <a href="https://github.com/BO-BiscayBay/TheCampSite/graphs/contributors">
@@ -19,6 +19,18 @@ Team Biscay Bay's Blue Ocean Project!
 ![Node](https://img.shields.io/badge/-Node-9ACD32?logo=node.js&logoColor=white&style=for-the-badge)
 ![Express](https://img.shields.io/badge/-Express-DCDCDC?logo=express&logoColor=black&style=for-the-badge)
 ![Axios](https://img.shields.io/badge/-Axios-671ddf?logo=axios&logoColor=black&style=for-the-badge)
+
+## Search by location & average rating
+<img src="assets/Search.gif" width="100%"/>
+
+## User profile page
+<img src="assets/ProfilePageBO.gif" width="100%"/>
+
+## Sign in
+<img src="assets/SignOutSignIn.gif" width="100%"/>
+
+## CampSite detail page & reviews
+<img src="assets/CampSiteDetailsPage.gif" width="100%"/>
 
 ## Team Git Workflow 
 
