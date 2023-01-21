@@ -1,5 +1,5 @@
 # TheCampSite
-This website was created in 5 days during the Hack Reacter (HR) full-stack immersive bootcamp. Our team met with a fictional client played by a HR staff member. The client hired us to create a website that allows users to find and research campgrounds. We worked in an agile environment, held daily stand-up meetings and used a Scrum board on Trello to track work tickets.
+This website was created in 5 days during the Hack Reacter (HR) full-stack immersive bootcamp. Our team met with a fictional client played by a HR staff member. The client hired us to create a website that allows users to find and research campgrounds. We worked in an agile environment, held daily stand-up meetings and used a Scrum board on Trello to track work tickets. The data used to demo the website was taken from a National Park Service API and loaded into a MongoDB database.
 
 ## Features
 - Mobile friendly
@@ -23,9 +23,11 @@ This website was created in 5 days during the Hack Reacter (HR) full-stack immer
 ## Technologies
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![Redux](https://img.shields.io/badge/-Redux-764abc?logo=redux&logoColor=white&style=for-the-badge)
 ![Node](https://img.shields.io/badge/-Node-9ACD32?logo=node.js&logoColor=white&style=for-the-badge)
 ![Express](https://img.shields.io/badge/-Express-DCDCDC?logo=express&logoColor=black&style=for-the-badge)
 ![Axios](https://img.shields.io/badge/-Axios-671ddf?logo=axios&logoColor=black&style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/-MongoDB-3FA037?logo=mongodb&logoColor=black&style=for-the-badge)
 
 ## Search by location & average rating
 <img src="assets/SearchByLocation.gif" width="100%"/>
