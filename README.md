@@ -3,7 +3,7 @@ This website was created in 5 days during the Hack Reacter (HR) full-stack immer
 
 ## Features
 - Mobile friendly
-- Search by location distance, number of reviews & average review rating
+- Search by location with distance option, number of reviews & average review rating
 - Authentication through Google that allows users to...
     - Like and unlike CampSites
     - Access their profile page that displays liked CampSites
