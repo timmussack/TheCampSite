@@ -1,5 +1,12 @@
 # TheCampSite
-This is a group project created in 5 working days during the Hack Reacter (HR) bootcamp. Our team met with a fictional client played by HR staff member. Our client hired us to create a website that allows users to search for campgrounds based on distance from their location, number of reviews and average review rating. The application features user authentication through google, a user profile page for "liked" campsites, and the ability to leave user reviews.
+This is a website created in 5 days the Hack Reacter (HR) bootcamp. Our team met with a fictional client played by a HR staff member. Our client hired us to create a website that allows users to find and research campgrounds. We worked in an agile environment, held daily stand-up meetings and used a Scrum board on Trello to track work tickets.
+
+## Features
+- Mobile friendly
+- Search by location distance, number of reviews & average review rating
+- Authentication through Google
+- User profile page that displays liked CampSites
+- Ability to leave user reviews
 
 ## Contributors<br />
 <a href="https://github.com/BO-BiscayBay/TheCampSite/graphs/contributors">
@@ -33,12 +40,10 @@ This is a group project created in 5 working days during the Hack Reacter (HR) b
 <img src="assets/CampSiteDetailsPage.gif" width="100%"/>
 
 ## Team Git Workflow 
-
 - FORK the group repo to your personal account. This will be your own dev branch! Clone this forked repo onto your local machine to use when coding. 
 - Submit work by pushing up to your personal fork (git push will work!), then submit a pull request to have it commited to the main, team repo.
 - You can set the main repo as a remote upstream, that way when you run git pull you will automatically pull down the most up to date version of our group repo.
 - To set up the remote upstream, run git remote add upstream https://github.com/BO-BiscayBay/TheCampSite.git
-
 
 ```bash
 $ git remote -v
