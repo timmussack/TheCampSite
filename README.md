@@ -4,9 +4,10 @@ This website was created in 5 days during the Hack Reacter (HR) full-stack immer
 ## Features
 - Mobile friendly
 - Search by location distance, number of reviews & average review rating
-- Authentication through Google
-- User profile page that displays liked CampSites
-- Ability to leave user reviews
+- Authentication through Google that allows users to...
+    - Like and unlike CampSites
+    - Access their profile page that displays liked CampSites
+    - Submit CampSite reviews
 
 ## Contributors<br />
 <a href="https://github.com/BO-BiscayBay/TheCampSite/graphs/contributors">
