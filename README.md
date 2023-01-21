@@ -33,14 +33,14 @@ This website was created in 5 days during the Hack Reacter (HR) full-stack immer
 ## Search by location & average rating
 <img src="assets/SearchByLocation.gif" width="100%"/>
 
-## User profile page
-<img src="assets/ProfilePageBO.gif" width="100%"/>
-
 ## Sign in
 <img src="assets/SignOutSignIn.gif" width="100%"/>
 
 ## CampSite detail page & reviews
 <img src="assets/CampSiteDetailsPage.gif" width="100%"/>
+
+## User profile page
+<img src="assets/ProfilePageBO.gif" width="100%"/>
 
 ## Team Git Workflow 
 - FORK the group repo to your personal account. This will be your own dev branch! Clone this forked repo onto your local machine to use when coding. 
