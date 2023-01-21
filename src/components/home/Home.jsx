@@ -12,7 +12,7 @@ function Home() {
         <Header />
         {campsites.length > 0 && <CardList />}
       </div>
-      <a href="a">
+      <a href="#">
         <footer className="sticky bottom-5 right-0 w-fill cursor-pointer">
           <div className="flex items-end justify-end sm:pr-[1%] pt-[100px]">
             <ArrowUpIcon
