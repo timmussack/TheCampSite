@@ -21,7 +21,7 @@ This is a group project created in 5 working days during the Hack Reacter (HR) b
 ![Axios](https://img.shields.io/badge/-Axios-671ddf?logo=axios&logoColor=black&style=for-the-badge)
 
 ## Search by location & average rating
-<img src="assets/Search.gif" width="100%"/>
+<img src="assets/SearchByLocation.gif" width="100%"/>
 
 ## User profile page
 <img src="assets/ProfilePageBO.gif" width="100%"/>
