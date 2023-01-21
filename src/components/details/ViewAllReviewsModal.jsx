@@ -26,11 +26,9 @@ function ViewAllReviewsModal({ reviews }) {
     // console.log('..returning from review card reviews is empty');
   } else {
     const reviewCards = reviews.map((review, index) => <ReviewCard key={index} review={review} />);
-    console.log('review cards from modal', reviewCards);
     return (
       <div className="flex flex-col font-primary">
-        <Button sx={{ mx: 'auto' }} onClick={handleOpen}>View All Reviews</Button>
-        <div>{open && reviewCards}</div>
+        { reviewCards }
       </div>
     );
   }

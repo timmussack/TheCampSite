@@ -191,7 +191,7 @@ const Card = React.forwardRef((props, ref) => {
 
         { location && (
           <p className="text-secondary p-2">
-            Straight Line Distance:
+            Distance:
             {' '}
             {Math.floor(miles)}
             {' '}
