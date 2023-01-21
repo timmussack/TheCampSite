@@ -107,7 +107,7 @@ function ReviewModal({ campsite }) {
 
   return (
     <>
-      <div className="font-primary fixed flex flex-col items-center justify-center mt-4">
+      <div className="font-primary flex flex-col items-center justify-center mt-4">
         <button
           type="button"
           onClick={() => toggleModal()}

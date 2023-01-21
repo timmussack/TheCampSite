@@ -21,7 +21,11 @@ function CampsiteDetails() {
       <Header />
       <div className="mr-auto ml-auto max-w-xl justify-center items-center">
         <div className="flex flex-col mt-6">
-          <h2 className="font-bold">{campsite.campsiteName}</h2>
+          <h2 className="font-bold">
+            {' '}
+            {campsite.campsiteName}
+            {' '}
+          </h2>
           <h3>{`${campsite.address.line1}, ${campsite.address.city},  ${campsite.address.postalCode}`}</h3>
         </div>
         <TextRating rating={campsite.averageRating} />
