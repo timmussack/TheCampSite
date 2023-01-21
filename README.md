@@ -1,6 +1,18 @@
 # TheCampSite
 Team Biscay Bay's Blue Ocean Project! 
 
+## Contributors<br />
+<a href="https://github.com/BO-BiscayBay/TheCampSite/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=BO-BiscayBay/TheCampSite" />
+</a>
+
+   •[Tim Mussack](https://github.com/timmussack) - Engineer & Product Manager<br />
+   •[Willy McNamara](https://github.com/Willy-McNamara) - Engineer & Architecture Lead<br />
+   •[Cordelia Payson](https://github.com/cordelia-payson) - Engineer & UI Lead<br />
+   •[Sam Noden](https://github.com/samnoden) - Engineer<br />
+   •[Timothy Williams](https://github.com/Tersebike) - Engineer<br />
+   •[Camran Rynowecer](https://github.com/CrynowecerO) - Engineer<br />
+
 ## Team Git Workflow 
 
 - FORK the group repo to your personal account. This will be your own dev branch! Clone this forked repo onto your local machine to use when coding. 
