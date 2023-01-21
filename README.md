@@ -28,7 +28,6 @@ This website was created in 5 days during the Hack Reacter (HR) full-stack immer
 ![Tailwindcss](https://img.shields.io/badge/-Tailwindcss-d3d3d3?logo=tailwindcss&logoColor=blue&style=for-the-badge)
 ![Node](https://img.shields.io/badge/-Node-9ACD32?logo=node.js&logoColor=white&style=for-the-badge)
 ![Express](https://img.shields.io/badge/-Express-DCDCDC?logo=express&logoColor=black&style=for-the-badge)
-![Axios](https://img.shields.io/badge/-Axios-671ddf?logo=axios&logoColor=black&style=for-the-badge)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-3FA037?logo=mongodb&logoColor=black&style=for-the-badge)
 
 ## Search by location & average rating
