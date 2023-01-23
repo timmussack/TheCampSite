@@ -3,6 +3,8 @@ This website was created in 5 days during the Hack Reacter (HR) full-stack immer
 
 ## Features
 - Mobile friendly
+    - Infinite scroll to limit the number of CampSites that render on homepage
+    - Responsive css that adapts to any screen size
 - Search by location with distance option, number of reviews & average review rating
 - Authentication through Google that allows users to...
     - Like and unlike CampSites
